@@ -5,11 +5,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>IngSis UdeM</title>
-    <link rel="shortcut icon" type="image/x-icon" href="Imagenes\icon.png" >
+    <link rel="shortcut icon" type="image/x-icon" href="C:\Users\Juanes Quintero\Google Drive\U de M\5to Semestre\Desarrollo Web\Proyecto de Aula\IngSis-UdeM.github.io\Imagenes\icon.png" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="main.js"></script>
-
+ 
     <!--BOOTSTRAP-->
     <!-- Latest compiled and minified CSS -->    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
@@ -18,7 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
    
 </head>
 
@@ -26,8 +26,8 @@
    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <img src="Imagenes\is.png" 
-                width="200" height="90" class="d-inline-block align-baseline" alt="">
+                    <img src="C:\Users\Juanes Quintero\Google Drive\U de M\5to Semestre\Desarrollo Web\Proyecto de Aula\IngSis-UdeM.github.io\Imagenes\is.png" 
+                    width="200" height="90" class="d-inline-block align-baseline" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -50,20 +50,40 @@
               </ul>                             
             </div>
             <ul class="navbar-nav">                
-                <li id="login" class="nav-item"><a  class="nav-link active" href="login.html">Login</a></li>
+                <li id="login" class="nav-item"><a  class="nav-link active" href="#">Login</a></li>
             </ul>
             <a class="navbar-brand" href="#">
-                    <img  src="Imagenes\barra.png" 
+                    <img  src="C:\Users\Juanes Quintero\Google Drive\U de M\5to Semestre\Desarrollo Web\Proyecto de Aula\IngSis-UdeM.github.io\Imagenes\barra.png" 
                     width="10" height="80" class="d-inline-block align-baseline" alt="">
             </a>     
             <a class="navbar-brand" href="#">
-                    <img  src="Imagenes\udem.png" 
+                    <img  src="C:\Users\Juanes Quintero\Google Drive\U de M\5to Semestre\Desarrollo Web\Proyecto de Aula\IngSis-UdeM.github.io\Imagenes\udem.png" 
                     width="215" height="80" class="d-inline-block align-baseline" alt="">
             </a>
         </nav>
-       
+
+        
+        <div class="loginDiv">            
+            <form>
+                <h5 class="text-center">Ingrese a su cuenta</h5>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                        <div class="input-group" id="show_hide_password">
+                            <input type="password" class="form-control" placeholder="Ingrse su contraseña">
+                            <div class="input-group-addon">
+                                <div class="input-group-text"><a><i class="fa fa-eye-slash" aria-hidden="true"></i></a></div>
+                            </div>
+                        </div>
+                </div>                           
+                <div class="text-center"><button type="submit" class="btn btn-dark">Entrar</button></div>
+            </form>
+        </div>
+    
     <!--BOOTSTRAP CDN js file-->
     <!-- Latest compiled and minified JavaScript -->
+    <script src="main.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
