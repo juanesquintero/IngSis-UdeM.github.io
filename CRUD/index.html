@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CRUD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <style>
+    #btnUpdate{
+        display: none;
+    }
+    </style>
+
+</head>
+<body>
+    
+    <h1>ESTUDIANTES</h1>
+
+    <div id="mensaje"> </div>
+    
+    <!--onsubmit-->
+    <form>
+        <input type="hidden" id='studentId'/>
+        <input type="text" id='studentName' placeholder="Ingrese el nombre"/>
+        <input type="text" id='studentAge' placeholder="Ingrese edad"/>
+        <select id='studentCourse'>
+            <option value="6" >Bases de Datos</option>
+            <option value="1" >Dllo Web</option>
+            <option value="2" >Ing de SW 2</option>
+            <option value="3" >Sis Digitales</option>
+            <option value="5" >Ing de SW 3</option>
+            <option value="4" >Tecnicas BD</option>
+        </select>
+        <input type="button" id="btnNew" value ="Guardar" onclick="add()"/>
+        <input type="button" id="btnUpdate" value ="Modificar" onclick="update()"/>
+        <input type="button" style="display:none;" id="btnCancel" value ="Cancelar" onclick="cancel()"/>
+    </form>
+
+    <!--colspan="n" rowspan="n"-->
+    <table>
+        <thead>
+            <tr>
+                <td><center><b>Nombres</b></center></td>
+                <td><center><b>Edad</b></center></td>
+                <td><center><b>Cursos</b></center></td>
+                <td colspan="2"><center><b>Acciones</b></center></td>
+            </tr>
+        </thead>
+        <tbody id = "contenedor">
+        </tbody>
+    </table>
+
+    <!--<script src="main.js"></script>-->
+    <script src="mainData.js"></script>
+
+</body>
+</html>
