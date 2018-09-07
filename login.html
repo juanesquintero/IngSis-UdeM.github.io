@@ -5,82 +5,88 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>IngSis UdeM</title>
-    <link rel="shortcut icon" type="image/x-icon" href="C:\Users\Juanes Quintero\Google Drive\U de M\5to Semestre\Desarrollo Web\Proyecto de Aula\IngSis-UdeM.github.io\Imagenes\icon.png" >
+    <link rel="shortcut icon" type="image/x-icon" href="Imagenes\icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
- 
+
     <script src="js/login.js"></script>
 
     <!--BOOTSTRAP-->
-    <!-- Latest compiled and minified CSS -->    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
-     <!-- JQuery and Pooper.js-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- JQuery and Pooper.js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-   
+
 </head>
 
 <body>
-   <!--Barra de navegacion-->
-   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <!--Barra de navegacion-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="Imagenes\is.png" 
-            width="200" height="90" class="d-inline-block align-baseline" alt="">
+            <img src="Imagenes\is.png" width="200" height="90" class="d-inline-block align-baseline" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>           
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-            <li class="nav-item dropdown"><a href="sobreNosotros.html" class="nav-link">Sobre Nosotros</a></li>
-            <li class="nav-item"><a  class="nav-link" href="noticias.html">Noticias</a></li>
-            <li class="nav-item"><a  class="nav-link" href="empresas.html">Empresas</a></li>
-            <li class="nav-item"><a  class="nav-link" href="ofertas.html">Ofertas de Empleo</a></li>
-          </ul>                             
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item dropdown"><a href="sobreNosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+                <li class="nav-item"><a class="nav-link" href="empresas.html">Empresas</a></li>
+                <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas de Empleo</a></li>
+            </ul>
         </div>
-        <ul class="navbar-nav" id="divLoing">                
-            <li id="login" class="nav-item"><a  class="nav-link active" href="login.html">Login</a></li>
+        <ul class="navbar-nav" id="divLoing">
+            <li id="btnLogin" class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
         </ul>
-        <input type="hidden" id="bandera" value="0"> 
-        <li id="member" style="display:none;" class="nav-item"><a  class="nav-link" href="login.html">User</a></li>        
+        <input type="hidden" id="bandera" value="0">
+        <li id="lblMember" style="display:none;" class="nav-item"><a class="nav-link" href="login.html">User</a></li>
 
         <a class="navbar-brand" href="#">
-                <img  src="Imagenes\barra.png" 
-                width="10" height="80" class="d-inline-block align-baseline" alt="">
-        </a>     
+            <img src="Imagenes\barra.png" width="10" height="80" class="d-inline-block align-baseline" alt="">
+        </a>
         <a class="navbar-brand" href="#">
-                <img  src="Imagenes\udem.png" 
-                width="215" height="80" class="d-inline-block align-baseline" alt="">
+            <img src="Imagenes\udem.png" width="215" height="80" class="d-inline-block align-baseline" alt="">
         </a>
     </nav>
-        <!--Login-->
-        <div class="contenedor1">            
-            <form>
-                <h5 class="text-center">Ingrese a su cuenta</h5>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="E-mail">
+    <!--Login-->
+    <div class="contenedor1">
+        <form>
+            <h5 class="text-center">Ingrese a su cuenta</h5>
+            <div class="form-group">
+
+                <!--Campo de email-->
+                <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <div class="input-group" id="show_hide_password">
+                    <!--Campo de contraseña-->
+                    <input id="txtPass" type="password" class="form-control" placeholder="Ingrese su contraseña">
+                    <div class="input-group-addon">
+                        <div class="input-group-text"><a href="#"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></div>
+                    </div>
                 </div>
-                <div class="form-group">
-                        <div class="input-group">
-                            <input id="contra" type="password" class="form-control" placeholder="Ingrese su contraseña">
-                            <div class="input-group-addon">
-                                <div class="input-group-text"><a><i class="fa fa-eye-slash" aria-hidden="true"></i></a></div>
-                            </div>
-                        </div>
-                </div>                           
-                <div class="text-center"><input type="button" value="Entrar" class="btn btn-dark" onclick="inicio()"/></div>
-            </form>
-        </div>
-    
+            </div>
+    </div>
+    <!--Boton para validar campos-->
+    <div class="text-center"><input type="button" value="Entrar" class="btn btn-dark" onclick="log()" /></div>
+    </form>
+    </div>
+
+    <!--El mensaje de error que muestra al hacer un login incorrecto (Escondido hasta que se valide la info de login)-->
+    <div id="msgAlerta" class="alert alert-danger" role="alert" style="display: none">
+        <h5 id="mensajeError">¡Email o contraseña incorrectos!</h5>
+    </div>
+
     <!--BOOTSTRAP CDN js file-->
     <!-- Latest compiled and minified JavaScript -->
-    <script src="main.js"></script>
-    
+    <script src="js/ojitoLogin.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 

@@ -22,23 +22,41 @@
     </li>
  * 
  * 
- */ 
+ */
 
-function myFunction() {
+/*
+ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+*/
 
-$(document).ready(function() {
-    $("#show_hide_password a").on('click', function(event) {
-        event.preventDefault();
-        if($('#show_hide_password input').attr("type") == "text"){
-            $('#show_hide_password input').attr('type', 'password');
-            $('#show_hide_password i').addClass( "fa-eye-slash" );
-            $('#show_hide_password i').removeClass( "fa-eye" );
-        }else if($('#show_hide_password input').attr("type") == "password"){
-            $('#show_hide_password input').attr('type', 'text');
-            $('#show_hide_password i').removeClass( "fa-eye-slash" );
-            $('#show_hide_password i').addClass( "fa-eye" );
-        }
-    });
-});
+//se recibe las variables pasadas por parametros en la url
+var paramstr = window.location.search.substr(1);
+var params = {};
+
+//se recorta el string pasado por la url despues del "?" donde encuentre un = y se guarda en un array temporal
+var tmparr = paramstr.split("=");
+/*la pasocion del array params ya no es un numero si no el valor de lo que hay en "tmparr[0]",
+ * en "tmparr[0]" quedó 'name' que es la variable que se pasa por la url
+ * y en "tmparr[1]" quedó el valor de la variable 'name' pasada por url, es decir, quedó el nombre del usuario
+ */
+params[tmparr[0]] = tmparr[1];
+
+//si en la posicion 'name' del arreglo hay algun valor entonces entra
+if (params['name']) {
+    console.log('El valor del parámetro variable es: ' + params['name']);
+    var tmpUserName = params['name']
+    var loginUserName
+
+    /*si es un nombre compuesto corta el %20 que pone la url como un espacio en blanco. si no es nombre compuesto entonces 
+     * guarda la var tal como la recibe y la imprime
+     */
+    if (tmpUserName.includes('%20')) {
+        loginUserName = tmpUserName.replace('%20', ' ')
+    } else {
+        loginUserName = tmpUserName
+    }
+    console.log('El nombre del usuario logueado es: ' + loginUserName)
+} else {
+    console.log('No se envió el parámetro variable');
+}
