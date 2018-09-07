@@ -24,7 +24,7 @@
 
 <body>
    <!--Barra de navegacion-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
                 <img src="Imagenes\is.png" 
                 width="200" height="90" class="d-inline-block align-baseline" alt="">
@@ -35,14 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link active dropdown-toggle" data-toggle="dropdown">Sobre Nosotros<b class='caret'></b></a>
-                        <ul class="dropdown-menu">
-                            <li href="#"><a>Mision</a></li>
-                            <li href="#"><a>Vision</a></li>
-                            <li href="#"><a>Contacto</a></li>
-                        </ul>
-                    </li>
+                <li class="nav-item dropdown"><a href="sobreNosotros.html" class="nav-link active">Sobre Nosotros</a></li>
                 <li class="nav-item"><a  class="nav-link" href="noticias.html">Noticias</a></li>
                 <li class="nav-item"><a  class="nav-link" href="empresas.html">Empresas</a></li>
                 <li class="nav-item"><a  class="nav-link" href="ofertas.html">Ofertas de Empleo</a></li>
@@ -59,7 +52,61 @@
                     <img  src="Imagenes\udem.png" 
                     width="215" height="80" class="d-inline-block align-baseline" alt="">
             </a>
-        </nav>
+    </nav>
+
+    <!--Biografias-->
+    <!--Contenedor 2 columnas-->
+    <div class="container contenedor1">
+        <div class="row">
+            <!--Biografia Juan Quintero-->
+            <div class="col-sm vl">
+                <section class="text-center"><img src="Imagenes\JQ.png"></section> 
+                <h2 class="text-center">Juan Esteban Quintero</h2>
+                <h5>Perfil</h5>
+                <P> Estudiante de ingeniería de sistemas de la Universidad de Medellín,
+                    curso actualmente el quinto semestre, soy alguien que aprendo fácil y rápido,
+                    poseo conocimientos basicos en varios lenguajes de programación.
+                </P>             
+                <hr>
+                <h5>Informacion Personal</h5>
+                <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col"><center>C.C</center></th>
+                            <th scope="col"><center>Celular</center></th>
+                            <th scope="col"><center>Edad</center></th>
+                            <th scope="col"><center>Correo</center></th>
+                          </tr>
+                        </thead>
+                    <tbody id = "contenedor">
+                        <tr>                       
+                            <td><center> 1152467461 </center></td>
+                            <td><center> 3173368759 </center></td>
+                            <td><center> 19 </center></td>
+                            <td><center> juaneschrome@gmail.com </center></td>
+                        </tr>
+                    </tbody>
+                </table>        
+                <hr>
+
+                <h5>Formacion educativa</h5>
+                <P> Mi formacion educativa transcurrio a lo largo de 3 instituciones, primaria en el 
+                    <a href="http://www.colegioideas.edu.co/" target="_blank">Colegio Ideas</a>,
+                    bachillerato en <a href="http://www.colegiocoomeva.edu.co/" target="_blank">Colegio Coomeva</a>
+                    y actualmente educacion superior en la <a href="https://www.udem.edu.co/" target="_blank">Universidad de Medellín</a>.
+                </P>                        
+            </div>
+
+            <!--Biografi Juan Leal-->
+            <div class="col-sm">
+                <h2>Heading</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+        </div>   
+        <hr>
+    </div> 
+    
        
     <!--BOOTSTRAP CDN js file-->
     <!-- Latest compiled and minified JavaScript -->
