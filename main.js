@@ -1,30 +1,12 @@
 /**
- * Realizar un aplicativo web con HTML, CSS y JAVASCRIPT, el aplicativo debe de contener:
- *  Página de inicio: Donde se debe describir de que se trata el proyecto y sus objetivos. 
- *  Página “Sobre Nosotros”: Donde se debe mostrar la foto y la biografía de cada integrante del grupo. 
- *  Página de login: Una página con un formulario que solicite un email y contraseña para realizar el respectivo inicio de sesión.
- *  Página de CRUD principal
- *  Página de CRUD secundario  
- *  Página de CRUD terciario. 
-    Para la funcionalidad se trabajará con arreglos y objetos.
-
- * CRUD de Noticias
- * CRUD de Empresas 
- * CRUD de Ofertas de Empleo
- * 
- *  <li class="nav-item dropdown">
-        <a href="sobreNosotros.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sobre Nosotros<b class='caret'></b></a>
-            <ul class="dropdown-menu">
-                <li href="#"><a>Mision</a></li>
-                <li href="#"><a>Vision</a></li>
-                <li href="#"><a>Contacto</a></li>
-            </ul>
-    </li>
- * 
- * 
- */
-
-/*
+ <li class="nav-item dropdown">
+    <a href="sobreNosotros.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sobre Nosotros<b class='caret'></b></a>
+    <ul class="dropdown-menu">
+        <li href="#"><a>Mision</a></li>
+        <li href="#"><a>Vision</a></li>
+        <li href="#"><a>Contacto</a></li>
+    </ul>
+</li>
  function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -46,16 +28,17 @@ params[tmparr[0]] = tmparr[1];
 if (params['name']) {
     console.log('El valor del parámetro variable es: ' + params['name']);
     var tmpUserName = params['name']
-    var loginUserName
-
+    var loginUserName=tmpUserName
     /*si es un nombre compuesto corta el %20 que pone la url como un espacio en blanco. si no es nombre compuesto entonces 
      * guarda la var tal como la recibe y la imprime
      */
     if (tmpUserName.includes('%20')) {
         loginUserName = tmpUserName.replace('%20', ' ')
-    } else {
-        loginUserName = tmpUserName
     }
+    document.getElementById('lblMember').innerText = loginUserName
+    document.getElementById('lblMember').style.display = "inline"
+    document.getElementById('iconUser').style.display = "inline"
+    document.getElementById('btnLogin').style.display = "none"
     console.log('El nombre del usuario logueado es: ' + loginUserName)
 } else {
     console.log('No se envió el parámetro variable');

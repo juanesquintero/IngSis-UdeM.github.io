@@ -25,7 +25,7 @@
 <body>
    <!--Barra de navegacion-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand"href="https://www.instagram.com/ingsistemasudem/?hl=es-la" target="_blank">
                 <img src="Imagenes\is.png" 
                 width="200" height="90" class="d-inline-block align-baseline" alt="">
             </a>
@@ -34,23 +34,22 @@
             </button>           
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link" onclick="changePage('index')">Inicio</a></li>
                 <li class="nav-item dropdown"><a href="sobreNosotros.html" class="nav-link">Sobre Nosotros</a></li>
                 <li class="nav-item"><a  class="nav-link" href="noticias.html">Noticias</a></li>
                 <li class="nav-item"><a  class="nav-link active" href="empresas.html">Empresas</a></li>
                 <li class="nav-item"><a  class="nav-link" href="ofertas.html">Ofertas de Empleo</a></li>
               </ul>                             
             </div>
-            <ul class="navbar-nav">                
-                <li id="login" class="nav-item"><a  class="nav-link" href="login.html">Login</a></li>
+            <ul class="navbar-nav">
+                <li id="btnLogin" class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
             </ul>
-            <a class="navbar-brand" href="#">
-                    <img  src="Imagenes\barra.png" 
-                    width="10" height="80" class="d-inline-block align-baseline" alt="">
-            </a>     
-            <a class="navbar-brand" href="#">
-                    <img  src="Imagenes\udem.png" 
-                    width="215" height="80" class="d-inline-block align-baseline" alt="">
+    
+            <span id="iconUser" class="fa fa-user textBar" aria-hidden="true" style="display: none;"></span>
+            <li id="lblMember" style="display:none;" class="nav-item textBar"><a class="nav-link" href="login.html">User</a></li>
+           
+            <a class="navbar-brand vbl" style="margin-left: 2%;" href="https://www.udem.edu.co/" target="_blank">
+              <img src="Imagenes\udem.png" width="215" height="80" style="margin-left: 5%" class="d-inline-block align-baseline" alt="">
             </a>
         </nav>
 
@@ -58,7 +57,7 @@
         <div class="container contenedor1">
             <div class="row">
               <!--Form Empresas-->
-              <div class="col-sm vl">
+              <div class="col-sm vbr">
                   <form >
                       <div class="form-row">
                         <div class="form-group col-md-6">
@@ -109,13 +108,13 @@
               <!--Visualizacion-->
               <div class="col-sm">
                 <h2>Empresas</h2>
-                <table>
-                    <thead>
+                <table class="table">
+                    <thead class="thead-dark">
                         <tr>
-                            <td><center><b>Nombres</b></center></td>
-                            <td><center><b>Edad</b></center></td>
-                            <td><center><b>Cursos</b></center></td>
-                            <td colspan="2"><center><b>Acciones</b></center></td>
+                            <th scope="col"><center><b>Nombres</b></center></th>
+                            <th scope="col"><center><b>Edad</b></center></th>
+                            <th scope="col"><center><b>Cursos</b></center></th>
+                            <th scope="col" colspan="2"><center><b>Acciones</b></center></th>
                         </tr>
                     </thead>
                     <tbody id = "contenedor">

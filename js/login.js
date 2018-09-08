@@ -34,21 +34,30 @@ var app = new function() {
         }
     ]
 
+    var nombreUsuario =""
+
+    changePage = function(vista){
+        if(nombreUsuario != ""){
+            window.location = vista + ".html?name=" + nombreUsuario
+        }else{
+            console.log('Bruh')
+        }
+    }
+
     log = function() {
         var email = document.getElementById('txtEmail').value
         var clave = document.getElementById('txtPass').value
         for (var i = 0; i < members.length; i++) {
-            console.log(members[i])
             if (email == members[i].correo && members[i].contraseña == clave) {
                 console.log(email + '\n' + clave)
-                var nombreUsuario = members[i].nombre
-                document.getElementById('lblMember').style.display = "inline"
-                document.getElementById('btnLogin').style.display = "none"
-
+                nombreUsuario = members[i].nombre                
                 //proceso para pasar el nombre por la url a las otras vistas del la pagina
-                window.location = "index.html?name=" + nombreUsuario
+                document.getElementById('lblMember').innerText = nombreUsuario
+                document.getElementById('lblMember').style.display = "inline"
+                document.getElementById('iconUser').style.display = "inline"
+                document.getElementById('btnLogin').style.display = "none"
                 console.log("Enviar las siguientes variables")
-                console.log(nombre)
+                console.log(nombreUsuario)
                 console.log('enviado')
             } else {
                 document.getElementById('msgAlerta').style.display = "inline"

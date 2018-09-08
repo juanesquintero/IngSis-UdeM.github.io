@@ -2,9 +2,6 @@ li {
     margin-right: 20px
 }
 
-#login {
-    margin-right: 30px
-}
 
 #inicio {
     margin-left: 30px
@@ -21,7 +18,16 @@ a:hover {
     color: #333
 }
 
-.vl {
+.textBar{
+    color: white;
+    margin-right: 1%
+}
+
+.vbr {
     border-right: 2px solid grey;
+    height: 100%;
+}
+.vbl {
+    border-left: 2px solid grey;
     height: 100%;
 }
