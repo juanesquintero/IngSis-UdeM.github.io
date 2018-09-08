@@ -37,10 +37,14 @@ var app = new function() {
     var nombreUsuario =""
 
     changePage = function(vista){
-        if(nombreUsuario != ""){
+        if(nombreUsuario != ""){           
             window.location = vista + ".html?name=" + nombreUsuario
+            console.log("Enviar las siguientes variables")
+            console.log(nombreUsuario)
+            console.log('enviado')
         }else{
-            console.log('Bruh')
+            window.location = vista + ".html"
+            console.log('No usuario')
         }
     }
 
@@ -55,10 +59,7 @@ var app = new function() {
                 document.getElementById('lblMember').innerText = nombreUsuario
                 document.getElementById('lblMember').style.display = "inline"
                 document.getElementById('iconUser').style.display = "inline"
-                document.getElementById('btnLogin').style.display = "none"
-                console.log("Enviar las siguientes variables")
-                console.log(nombreUsuario)
-                console.log('enviado')
+                document.getElementById('btnLogin').style.display = "none"                
             } else {
                 document.getElementById('msgAlerta').style.display = "inline"
             }
