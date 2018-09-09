@@ -409,11 +409,20 @@
               </div>
             </div>
             <!--Boton para validar campos-->  
-            <div class="text-center">
-                <input type="submit" value="Registrar" class="btn btn-dark" onclick="add()" />  
+            <div class="text-center" style="margin-bottom: 25px">
+              <input type="button" id="btnNew" value="Registrar" class="btn btn-dark" onclick="add()" />
+              <input type="button" style="display:none;" id="btnUpdate" value ="Modificar" class="btn btn-dark" onclick="update()"/>
+              <input type="button" style="display:none;" id="btnCancel" value ="Cancelar" class="btn btn-dark" onclick="cancel()"/>
+            </div>            
+            <!--Alerta de campos invalidos-->
+            <div id="msgAlerta" class="alert alert-warning contenedor1" role="alert" style="display: none; margin-bottom: 20px;">
+              <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span>
+              ¡Email o contraseña incorrectos!
             </div>
+            <div class="hb"></div>
         </form>
-        <div class="hb"></div>
+        
         <br><br> 
         </div>  
                                       
@@ -439,9 +448,10 @@
     </div>
                 
       <!--BOOTSTRAP CDN js file-->
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="js/empresas.js"></script>
+      <!-- Latest compiled and minified JavaScript -->   
+      <script src="js/empresas.js"></script>   
       <script src="js/user.js"></script>
+      
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
