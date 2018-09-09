@@ -31,3 +31,10 @@ a:hover {
     border-left: 2px solid grey;
     height: 100%;
 }
+.hb {
+    height:2px;
+    background-color: grey;
+    margin-bottom: 50px;
+    width: 100%;
+    margin: 15px;
+}
