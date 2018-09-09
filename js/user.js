@@ -22,6 +22,7 @@ if (params['name']) {
     if (tmpUserName.includes('%20')) {
         loginUserName = tmpUserName.replace('%20', ' ')
     }
+    //Mostrar el nombre de usuario y ocultar el link de la vista login
     document.getElementById('lblMember').innerText = loginUserName
     document.getElementById('lblMember').style.display = "inline"
     document.getElementById('iconUser').style.display = "inline"
@@ -31,3 +32,14 @@ if (params['name']) {
     console.log('No se envió el parámetro variable');
 }
 
+//Funcion de cambio de vista para mandar el nombre de usuario logeado
+changePage = function(vista){
+    if(loginUserName != ""){
+         //proceso para pasar el nombre por la url a las otras vistas del la pagina      
+        window.location = vista + ".html?name=" + loginUserName
+    }else{
+        //pasar a otra vista sin usuario logeado
+        window.location = vista + ".html"
+        console.log('No usuario')
+    }
+}

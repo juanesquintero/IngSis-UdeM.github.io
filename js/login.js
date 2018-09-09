@@ -37,12 +37,11 @@ var app = new function() {
     var nombreUsuario =""
 
     changePage = function(vista){
-        if(nombreUsuario != ""){           
+        if(nombreUsuario != ""){
+             //proceso para pasar el nombre por la url a las otras vistas del la pagina      
             window.location = vista + ".html?name=" + nombreUsuario
-            console.log("Enviar las siguientes variables")
-            console.log(nombreUsuario)
-            console.log('enviado')
         }else{
+            //pasar a otra vista sin usuario logeado
             window.location = vista + ".html"
             console.log('No usuario')
         }
@@ -55,16 +54,21 @@ var app = new function() {
             if (email == members[i].correo && members[i].contraseña == clave) {
                 console.log(email + '\n' + clave)
                 nombreUsuario = members[i].nombre                
-                //proceso para pasar el nombre por la url a las otras vistas del la pagina
+               //Ocultar y limbiar elemtos de la vista que no se nesecitan
+                document.getElementById('btnLogin').style.display = "none"  
+                document.getElementById('msgAlerta').style.display = "none" 
+                document.getElementById('txtEmail').value = ""  
+                document.getElementById('txtPass').value = "" 
+                //mostrar el nombre de usuario
                 document.getElementById('lblMember').innerText = nombreUsuario
                 document.getElementById('lblMember').style.display = "inline"
-                document.getElementById('iconUser').style.display = "inline"
-                document.getElementById('btnLogin').style.display = "none"                
-            } else {
+                document.getElementById('iconUser').style.display = "inline"              
+                            
+            }else{
+                //mostrar alerta
                 document.getElementById('msgAlerta').style.display = "inline"
             }
         }
-        //document.getElementById('contenedor').innerHTML = data
     }
 
 }
