@@ -1,4 +1,17 @@
 var app = new function(){
+    
+    var empresas = ["LILI","GLBT","PSL"]
+    getEmpresas = function() {
+        var data =''
+        for(var i = 0; i < empresas.length ;i++){
+            //Datos
+            data += "<option value='"+empresas[i]+"'>"+empresas[i]+"</option>"
+        }
+        document.getElementById('empresa').innerHTML = data     
+    }
+    getEmpresas()
+    
+
     var ofertas = [
         {   
             empresa:"LILI",
