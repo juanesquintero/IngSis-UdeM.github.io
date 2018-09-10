@@ -8,7 +8,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="Imagenes\icon.png" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="ofertas.js"></script>
 
     <!--BOOTSTRAP-->
     <!-- Latest compiled and minified CSS -->    
@@ -63,9 +62,9 @@
                     <div class="form-group col-md-2">
                       <label>Empresa</label>
                       <select id="empresa" class="form-control" onchange="sugerir()">
-                        <option id='PSL' value='PSL S.A'>PSL</option>
-                        <option id='LILI' value='Lili Bisuteria'>LILI</option>
-                        <option id='GLBT' value='Globant'>GLBT</option>
+                        <option value='PSL'>PSL</option>
+                        <option value='LILI'>LILI</option>
+                        <option value='GLBT'>GLBT</option>
                       </select>
                     </div>
                     <div class="form-group col-md-4">
@@ -109,7 +108,6 @@
                     <div class="form-group col-md-4">
                         <label>Horario</label>
                         <input type="text" class="form-control" id="txtHorario" placeholder="Horario semanal">
-                        <input type="text" readonly class="form-control-plaintext" id="txtHorario2" value="No tiene" style="display: none; color: darkgrey">
                     </div> 
                     <div class="form-group col-md-10">
                         <label>Labores</label>
@@ -374,43 +372,43 @@
                       </select>                    
                   </div>
                     <div id="divDepar" class="form-group col-md-3" style="display: none;" >
-                      <label>Departamento</label>
-                      <select id="departamento" class="form-control" onchange="sugerir()">
-                        <option id='CO-AMA' value='Leticia'>Amazonas</option>
-                        <option id='CO-ANT' value='Medellín'>Antioquia</option>
-                        <option id='CO-ARA' value='Arauca'>Arauca</option>
-                        <option id='CO-ATL' value='Barranquilla'>Atlántico</option>
-                        <option id='CO-BOG' value='Bogotá D.C'>Bogotá</option>
-                        <option id='CO-BOL' value='Cartagena'>Bolívar</option>
-                        <option id='CO-BOY' value='Tunja'>Boyacá</option>
-                        <option id='CO-CAL' value='Manizales'>Caldas</option>
-                        <option id='CO-CAQ' value='Florencia'>Caquetá</option>
-                        <option id='CO-CAS' value='Yopal'>Casanare</option>
-                        <option id='CO-CAU' value='Popayán'>Cauca</option>
-                        <option id='CO-CES' value='Valledupar'>Cesar</option>
-                        <option id='CO-CHO' value='Quibdó'>Chocó</option>
-                        <option id='CO-COR' value='Montería'>Córdoba</option>
-                        <option id='CO-CUN' value='Bogotá D.C'>Cundinamarca</option>
-                        <option id='CO-GUA' value='Puerto Inirida'>Guainía</option>
-                        <option id='CO-GUV' value='San José del Guaviare'>Guaviare</option>
-                        <option id='CO-HUI' value='Neiva'>Huila</option>
-                        <option id='CO-LAG' value='Riohacha'>La Guajira</option>
-                        <option id='CO-MAG' value='Santa Marta'>Magadalena</option>
-                        <option id='CO-MET' value='Villavicencio'>Meta</option>
-                        <option id='CO-NAR' value='Pasto'>Nariño</option>
-                        <option id='CO-NDS' value='Cúcuta'>Norte de Santander</option>
-                        <option id='CO-PUT' value='Mocoa'>Putumayo</option>
-                        <option id='CO-QUI' value='Armenia'>Quindio</option>
-                        <option id='CO-RIS' value='Pereira'>Risaralda</option>
-                        <option id='CO-SAN' value='Bucaramanga'>Santander</option>
-                        <option id='CO-SAP' value='San Andrés'>San Andrés y Providencia</option>
-                        <option id='CO-SUC' value='Sincelejo'>Sucre</option>
-                        <option id='CO-TOL' value='Ibagué'>Tolima</option>
-                        <option id='CO-VAC' value='Cali'>Valle del Cauca</option>
-                        <option id='CO-VAU' value='Mitú'>Vaupés</option>
-                        <option id='CO-VID' value='Puerto Carreño'>Vichada</option>                            
-                      </select>                    
-                      </div>
+                        <label>Departamento</label>
+                        <select id="departamento" class="form-control" onchange="sugerir()">
+                            <option id='CO-AMA' value='Leticia'>Amazonas</option>
+                            <option id='CO-ANT' value='Medellín'>Antioquia</option>
+                            <option id='CO-ARA' value='Arauca'>Arauca</option>
+                            <option id='CO-ATL' value='Barranquilla'>Atlántico</option>
+                            <option id='CO-BOG' value='Bogotá D.C'>Bogotá</option>
+                            <option id='CO-BOL' value='Cartagena'>Bolívar</option>
+                            <option id='CO-BOY' value='Tunja'>Boyacá</option>
+                            <option id='CO-CAL' value='Manizales'>Caldas</option>
+                            <option id='CO-CAQ' value='Florencia'>Caquetá</option>
+                            <option id='CO-CAS' value='Yopal'>Casanare</option>
+                            <option id='CO-CAU' value='Popayán'>Cauca</option>
+                            <option id='CO-CES' value='Valledupar'>Cesar</option>
+                            <option id='CO-CHO' value='Quibdó'>Chocó</option>
+                            <option id='CO-COR' value='Montería'>Córdoba</option>
+                            <option id='CO-CUN' value='Bogotá D.C'>Cundinamarca</option>
+                            <option id='CO-GUA' value='Puerto Inirida'>Guainía</option>
+                            <option id='CO-GUV' value='San José del Guaviare'>Guaviare</option>
+                            <option id='CO-HUI' value='Neiva'>Huila</option>
+                            <option id='CO-LAG' value='Riohacha'>La Guajira</option>
+                            <option id='CO-MAG' value='Santa Marta'>Magadalena</option>
+                            <option id='CO-MET' value='Villavicencio'>Meta</option>
+                            <option id='CO-NAR' value='Pasto'>Nariño</option>
+                            <option id='CO-NDS' value='Cúcuta'>Norte de Santander</option>
+                            <option id='CO-PUT' value='Mocoa'>Putumayo</option>
+                            <option id='CO-QUI' value='Armenia'>Quindio</option>
+                            <option id='CO-RIS' value='Pereira'>Risaralda</option>
+                            <option id='CO-SAN' value='Bucaramanga'>Santander</option>
+                            <option id='CO-SAP' value='San Andrés'>San Andrés y Providencia</option>
+                            <option id='CO-SUC' value='Sincelejo'>Sucre</option>
+                            <option id='CO-TOL' value='Ibagué'>Tolima</option>
+                            <option id='CO-VAC' value='Cali'>Valle del Cauca</option>
+                            <option id='CO-VAU' value='Mitú'>Vaupés</option>
+                            <option id='CO-VID' value='Puerto Carreño'>Vichada</option>                            
+                        </select>                    
+                    </div>
                     <div class="form-group col-md-3" id="divEstado">
                       <label id="lblEstado">Estado</label>
                       <input type="text" class="form-control" id="txtEstado" placeholder="California">
@@ -419,7 +417,7 @@
                       <label>Ciudad</label>
                       <input type="text" class="form-control" id="txtCiudad" placeholder="Los Angeles">
                     </div>
-                  </div>                  
+                </div>                  
                   
                   <br>
                   <!--Persona de contacto-->
@@ -451,7 +449,7 @@
               </form>
               
               <br><br> 
-              </div>  
+            </div>  
                                             
               <!--Visualizacion-->
               <div class="col-sm">
@@ -475,7 +473,7 @@
                 </table>
               </div>
             </div>
-          </div>
+        </div>
        
     <!--BOOTSTRAP CDN js file-->
     <!-- Latest compiled and minified JavaScript -->

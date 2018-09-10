@@ -106,7 +106,7 @@ var app = new function(){
     }
 
     update = function(){
-        if( checkCampos == true){
+        if( checkCampos() == true){
             var name = document.getElementById('txtNombre').value
             var activity = document.getElementById('txtActividad').value
             var id = document.getElementById('txtAlias').value
@@ -161,13 +161,10 @@ var app = new function(){
         document.getElementById('txtHorario').value=="" ||
         document.getElementById('txtLabores').value=="" ||
         document.getElementById('txtRequisitos').value=="" ||
-        document.getElementById('pais').value=="" ||
-        document.getElementById('departamento').value =="" ||
         document.getElementById('txtEstado').value =="" ||
         document.getElementById('txtCiudad').value =="" ||        
         document.getElementById('txtTelefono').value =="" ||
-        document.getElementById('txtEmail').value == ""){return false 
-            console.log('JA JA')}
+        document.getElementById('txtEmail').value == "" ) {return false} 
         else{ return true }
     }
 
@@ -175,7 +172,7 @@ var app = new function(){
         document.getElementById('empresa').value=""
         document.getElementById('txtCargo').value=""
         document.getElementById('txtVacantes').value=""
-        document.getElementById('rbFijo').checked = false
+        document.getElementById('rbFijo').checked = true
         document.getElementById('rbServicio').checked = false
         document.getElementById('txtSalario').value=""           
         document.getElementById('txtDuracion').value=""
@@ -183,14 +180,13 @@ var app = new function(){
         document.getElementById('txtHorario').value=""
         document.getElementById('txtLabores').value=""
         document.getElementById('txtRequisitos').value=""
-        document.getElementById('pais').value=""
-        document.getElementById('departamento').value =""
+        document.getElementById('pais').value="AF"
+        document.getElementById('departamento').id =="CO-AMA"
         document.getElementById('txtEstado').value =""
         document.getElementById('txtCiudad').value =""        
         document.getElementById('txtTelefono').value =""
         document.getElementById('txtEmail').value =""
-    } 
-
+    }
 
     add = function(){
         if(checkCampos()==true){
@@ -198,14 +194,14 @@ var app = new function(){
             var charge = document.getElementById('txtCargo').value
             var vacancy = document.getElementById('txtVacantes').value
             var terminus
+            var schedule = document.getElementById('txtHorario').value
             if(document.getElementById('rbFijo').checked){
                 terminus = document.getElementById('rbFijo').value
             }else{
-                terminus = document.getElementById('rbServicio').value 
+                terminus = document.getElementById('rbServicio').value
             } 
             var salary = document.getElementById('txtSalario').value           
             var duration = document.getElementById('txtDuracion').value +" "+ document.getElementById('tiempo').value
-            var schedule = document.getElementById('txtHorario').value
             var labors = document.getElementById('txtLabores').value.split(",")
             var  requirements = document.getElementById('txtRequisitos').value.split(",")
             var country = document.getElementById('pais').value
@@ -266,24 +262,37 @@ var app = new function(){
 }
 
 sugerir = function(){
+    console.log('Sugiriendo')   
+    //El pais condiciona el estado o departamento
     var pais = document.getElementById('pais').value
     if(pais == "CO"){
-        console.log('Sugiriendo')
         document.getElementById('divDepar').style.display = "inline"
         document.getElementById('divEstado').style.display = "none" 
         var ciudad = document.getElementById('departamento').value
         document.getElementById('txtCiudad').value = ciudad  
-    }    
-    if(document.getElementById('rbServicio').checked){
-        console.log('Sugiriendo')
-        document.getElementById('txtHorario').value = "No tiene"
-        document.getElementById('txtHorario').style.display = "none"
-        document.getElementById('txtHorario2').style.display = "inline" 
     }else{
-        document.getElementById('txtHorario').value = ""
-        document.getElementById('txtHorario').style.display = "inline"
-        document.getElementById('txtHorario2').style.display = "none" 
+        document.getElementById('divDepar').style.display = "none"
+        document.getElementById('divEstado').style.display = "inline" 
+        document.getElementById('departamento').id = "CO-AMA"
+        document.getElementById('txtCiudad').value = ""  
     }
+    //El termino del contrato condiciona al horario
+    if(document.getElementById('rbServicio').checked){
+        if(document.getElementById('txtHorario').value == "" ){
+            document.getElementById('txtHorario').value = "No tiene"
+            document.getElementById('txtHorario').disabled = true
+        }else{
+            document.getElementById('rbServicio').checked = false
+            document.getElementById('rbFijo').checked = true
+        }         
+    }    
+    if(document.getElementById('rbFijo').checked) {
+        document.getElementById('txtHorario').disabled = false 
+        if(document.getElementById('txtHorario').value == "No tiene"){
+            document.getElementById('txtHorario').value = ""
+        }
+    }  
+    
 }
 
 

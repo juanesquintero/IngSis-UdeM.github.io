@@ -122,8 +122,6 @@ var app = new function(){
         if(document.getElementById('txtNombre').value == "" ||
         document.getElementById('txtActividad').value == "" ||
         document.getElementById('txtAlias').value == "" ||
-        document.getElementById('pais').value == "" ||
-        document.getElementById('departamento').value == "" ||
         document.getElementById('txtEstado').value == "" ||
         document.getElementById('txtCiudad').value == "" ||
         document.getElementById('txtDic').value == "" ||
@@ -139,8 +137,8 @@ var app = new function(){
         document.getElementById('txtNombre').value = ""
         document.getElementById('txtActividad').value = ""
         document.getElementById('txtAlias').value = ""
-        document.getElementById('pais').value = ""
-        document.getElementById('departamento').value = ""
+        document.getElementById('pais').value="AF"
+        document.getElementById('departamento').id =="CO-AMA"
         document.getElementById('txtEstado').value = ""
         document.getElementById('txtCiudad').value = ""
         document.getElementById('txtDic').value = ""
@@ -210,13 +208,20 @@ var app = new function(){
 
 sugerir = function(){
     var pais = document.getElementById('pais').value
+   //El pais condiciona el estado o departamento
     if(pais == "CO"){
         console.log('Sugiriendo')
         document.getElementById('divDepar').style.display = "inline"
         document.getElementById('divEstado').style.display = "none" 
         var ciudad = document.getElementById('departamento').value
         document.getElementById('txtCiudad').value = ciudad  
-    }      
+    }else{
+        console.log('Sugiriendo')
+        document.getElementById('divDepar').style.display = "none"
+        document.getElementById('divEstado').style.display = "inline" 
+        document.getElementById('departamento').id = "CO-AMA"
+        document.getElementById('txtCiudad').value = ""  
+    }    
 }
 
 
