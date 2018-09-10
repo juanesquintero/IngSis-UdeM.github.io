@@ -5,122 +5,123 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>IngSis UdeM</title>
-    <link rel="shortcut icon" type="image/x-icon" href="Imagenes\icon.png" >
+    <link rel="shortcut icon" type="image/x-icon" href="Imagenes\icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    
+
     <!--BOOTSTRAP-->
-    <!-- Latest compiled and minified CSS -->    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
-     <!-- JQuery and Pooper.js-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- JQuery and Pooper.js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+
 </head>
 
 <body>
-   <!--Barra de navegacion-->
+    <!--Barra de navegacion-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="https://www.instagram.com/ingsistemasudem/?hl=es-la" target="_blank">
-                <img src="Imagenes\is.png" 
-                width="200" height="90" class="d-inline-block align-baseline" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="https://www.instagram.com/ingsistemasudem/?hl=es-la" target="_blank">
+            <img src="Imagenes\is.png" width="200" height="90" class="d-inline-block align-baseline" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>           
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('index')">Inicio</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('sobreNosotros')">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link active" onclick="changePage('noticias')">Noticias</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('empresas')">Empresas</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('ofertas')">Ofertas de Empleo</a></li>
-              </ul>                             
-            </div>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li id="btnLogin" class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('index')">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('sobreNosotros')">Sobre Nosotros</a></li>
+                <li class="nav-item"><a href="#" class="nav-link active" onclick="changePage('noticias')">Noticias</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('empresas')">Empresas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="changePage('ofertas')">Ofertas de Empleo</a></li>
             </ul>
-            
-            <span id="iconUser" class="fa fa-user textBar" aria-hidden="true" style="display: none;"></span>
-            <li id="lblMember" style="display:none;" class="nav-item textBar"><a class="nav-link" href="login.html">User</a></li>
-               
-            <a class="navbar-brand vbl" style="margin-left: 2%;" href="https://www.udem.edu.co/" target="_blank">
-                <img src="Imagenes\udem.png" width="215" height="80" style="margin-left: 5%" class="d-inline-block align-baseline" alt="">
-            </a>
-        </nav>
+        </div>
+        <ul class="navbar-nav">
+            <li id="btnLogin" class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
 
-        <!--Contenedor 2 columnas-->
+        <span id="iconUser" class="fa fa-user textBar" aria-hidden="true" style="display: none;"></span>
+        <li id="lblMember" style="display:none;" class="nav-item textBar"><a class="nav-link" href="login.html">User</a></li>
+        <span id="iconLogOut" class="fa fa-sign-out textBar" aria-hidden="true" style="display: none;" onclick="logOut()"></span>
+
+
+        <a class="navbar-brand vbl" style="margin-left: 2%;" href="https://www.udem.edu.co/" target="_blank">
+            <img src="Imagenes\udem.png" width="215" height="80" style="margin-left: 5%" class="d-inline-block align-baseline" alt="">
+        </a>
+    </nav>
+
+    <!--Contenedor 2 columnas-->
     <div class="container contenedor1">
-            <div class="row">
-              <!--Form Ofertas-->
-              <div class="col-sm">
-                <form >
-                    <input type="hidden" id='offerId'/>
+        <div class="row">
+            <!--Form Ofertas-->
+            <div class="col-sm">
+                <form>
+                    <input type="hidden" id='offerId' />
                     <div class="form-row">
                         <div class="form-group col-md-2">
-                        <label>Empresa</label>
-                        <select id="empresa" class="form-control">
+                            <label>Empresa</label>
+                            <select id="empresa" class="form-control">
                             <option value='PSL'>PSL</option>
                             <option value='LILI'>LILI</option>
                             <option value='GLBT'>GLBT</option>
                         </select>
                         </div>
                         <div class="form-group col-md-4">
-                        <label>Cargo</label>
-                        <input type="text" class="form-control" id="txtCargo" placeholder="Cargo a emplear">
+                            <label>Cargo</label>
+                            <input type="text" class="form-control" id="txtCargo" placeholder="Cargo a emplear">
                         </div>
                         <div class="form-group col-md-2">
                             <label>Vacantes</label>
                             <input type="number" class="form-control" id="txtVacantes">
                         </div>
-                    <!--Radio buttons para termino del contrato-->
-                    <div class="form-group col-md-3" style="margin-left: 20px">
-                        <p>Termino</p>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="rbServicio" value="Por servicio" name="nombre" onclick="sugerirHorario()">
-                            <label class="custom-control-label" for="rbServicio">por servicio</label>
+                        <!--Radio buttons para termino del contrato-->
+                        <div class="form-group col-md-3" style="margin-left: 20px">
+                            <p>Termino</p>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="rbServicio" value="Por servicio" name="nombre" onclick="sugerirHorario()">
+                                <label class="custom-control-label" for="rbServicio">por servicio</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="rbFijo" value="fijo" name="nombre" onclick="sugerirHorario()">
+                                <label class="custom-control-label" for="rbFijo">fijo</label>
+                            </div>
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="rbFijo" value="fijo" name="nombre" onclick="sugerirHorario()">
-                            <label class="custom-control-label" for="rbFijo">fijo</label>
+                        <div class="form-group col-md-2">
+                            <label>Salario</label>
+                            <input type="number" class="form-control" id="txtSalario">
                         </div>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label>Salario</label>
-                        <input type="number" class="form-control" id="txtSalario">
-                    </div>  
-                    <div class="form-group col-md-2">
-                        <label>Duracion</label>
-                        <input type="number" class="form-control" id="txtDuracion" placeholder="Tiempo contrato">
-                    </div>  
-                    <div class="form-group col-md-2">
-                        <br>
-                        <select id="tiempo" class="form-control" style="margin-top: 8px">
+                        <div class="form-group col-md-2">
+                            <label>Duracion</label>
+                            <input type="number" class="form-control" id="txtDuracion" placeholder="Tiempo contrato">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <br>
+                            <select id="tiempo" class="form-control" style="margin-top: 8px">
                             <option value='años'>años</option>
                             <option value='meses'>meses</option>
                             <option value='semanas'>semanas</option>
                             <option value='dias'>dias</option>
                             <option value='horas'>horas</option>
                         </select>
-                    </div>  
-                    <div class="form-group col-md-4">
-                        <label>Horario</label>
-                        <input type="text" class="form-control" id="txtHorario" placeholder="Horario semanal">
-                    </div> 
-                    <div class="form-group col-md-10">
-                        <label>Labores</label>
-                        <input type="text" class="form-control" id="txtLabores" placeholder="Labores que debera realizar en el cargo">
-                    </div> 
-                    <div class="form-group col-md-10">
-                        <label>Requisitos</label>
-                        <input type="text" class="form-control" id="txtRequisitos" placeholder="Requisitos que bebe cumplir el aspirante">
-                    </div> 
-                    <div class="form-group col-md-3">
-                      <label>Pais</label>
-                      <select id="pais" class="form-control" onchange="sugerirEstado()">                  
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Horario</label>
+                            <input type="text" class="form-control" id="txtHorario" placeholder="Horario semanal">
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label>Labores</label>
+                            <input type="text" class="form-control" id="txtLabores" placeholder="Labores que debera realizar en el cargo">
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label>Requisitos</label>
+                            <input type="text" class="form-control" id="txtRequisitos" placeholder="Requisitos que bebe cumplir el aspirante">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Pais</label>
+                            <select id="pais" class="form-control" onchange="sugerirEstado()">                  
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
                         <option value="AL">Albania</option>
@@ -370,11 +371,11 @@
                         <option value="YE">Yemen</option>
                         <option value="ZM">Zambia</option>
                         <option value="ZW">Zimbabwe</option>
-                      </select>                    
-                  </div>
-                    <div id="divDepar" class="form-group col-md-3" style="display: none;" >
-                        <label>Departamento</label>
-                        <select id="departamento" class="form-control" onchange="sugerirEstado()">
+                      </select>
+                        </div>
+                        <div id="divDepar" class="form-group col-md-3" style="display: none;">
+                            <label>Departamento</label>
+                            <select id="departamento" class="form-control" onchange="sugerirEstado()">
                             <option id='CO-AMA' value='Leticia'>Amazonas</option>
                             <option id='CO-ANT' value='Medellín'>Antioquia</option>
                             <option id='CO-ARA' value='Arauca'>Arauca</option>
@@ -408,74 +409,91 @@
                             <option id='CO-VAC' value='Cali'>Valle del Cauca</option>
                             <option id='CO-VAU' value='Mitú'>Vaupés</option>
                             <option id='CO-VID' value='Puerto Carreño'>Vichada</option>                            
-                        </select>                    
+                        </select>
+                        </div>
+                        <div class="form-group col-md-3" id="divEstado">
+                            <label id="lblEstado">Estado</label>
+                            <input type="text" class="form-control" id="txtEstado" placeholder="California">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Ciudad</label>
+                            <input type="text" class="form-control" id="txtCiudad" placeholder="Los Angeles">
+                        </div>
                     </div>
-                    <div class="form-group col-md-3" id="divEstado">
-                      <label id="lblEstado">Estado</label>
-                      <input type="text" class="form-control" id="txtEstado" placeholder="California">
+
+                    <br>
+                    <!--Persona de contacto-->
+                    <p><b>Enviar datos y hoja de vida</b></p>
+                    <hr>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Telefono</label>
+                            <input type="number" class="form-control" id="txtTelefono" placeholder="numero de telefono o celular">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="txtEmail" placeholder="correo coorporativo">
+                        </div>
                     </div>
-                    <div class="form-group col-md-3">
-                      <label>Ciudad</label>
-                      <input type="text" class="form-control" id="txtCiudad" placeholder="Los Angeles">
+                    <!--Boton para validar campos-->
+                    <div class="text-center" style="margin-bottom: 25px">
+                        <input type="button" id="btnNew" value="Registrar" class="btn btn-dark" onclick="add()" />
+                        <input type="button" style="display:none;" id="btnUpdate" value="Modificar" class="btn btn-dark" onclick="update()" />
+                        <input type="button" style="display:none;" id="btnCancel" value="Cancelar" class="btn btn-dark" onclick="cancel()" />
                     </div>
-                </div>                  
-                  
-                  <br>
-                  <!--Persona de contacto-->
-                  <p><b>Enviar datos y hoja de vida</b></p>
-                  <hr>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label>Telefono</label>
-                        <input type="number" class="form-control" id="txtTelefono" placeholder="numero de telefono o celular">
+                    <!--Alerta de campos invalidos-->
+                    <div id="msgAlerta" class="alert alert-warning contenedor1" role="alert" style="display: none; margin-bottom: 20px;">
+                        <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> ¡Informacion incompleta o incorrecta!
                     </div>
-                    <div class="form-group col-md-4">
-                      <label>Email</label>
-                      <input type="email" class="form-control" id="txtEmail" placeholder="correo coorporativo">
-                    </div>
-                  </div>
-                  <!--Boton para validar campos-->  
-                  <div class="text-center" style="margin-bottom: 25px">
-                    <input type="button" id="btnNew" value="Registrar" class="btn btn-dark" onclick="add()" />
-                    <input type="button" style="display:none;" id="btnUpdate" value ="Modificar" class="btn btn-dark" onclick="update()"/>
-                    <input type="button" style="display:none;" id="btnCancel" value ="Cancelar" class="btn btn-dark" onclick="cancel()"/>
-                  </div>            
-                  <!--Alerta de campos invalidos-->
-                  <div id="msgAlerta" class="alert alert-warning contenedor1" role="alert" style="display: none; margin-bottom: 20px;">
-                    <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
-                    <span class="sr-only">Error:</span>
-                    ¡Informacion incompleta o incorrecta!
-                  </div>
-                  <div class="hb"></div>
-              </form>
-              
-              <br><br> 
-            </div>  
-                                            
-              <!--Visualizacion-->
-              <div class="col-sm">
+                    <div class="hb"></div>
+                </form>
+
+                <br><br>
+            </div>
+
+            <!--Visualizacion-->
+            <div class="col-sm">
                 <h2>Empresas</h2>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                          <th scope="col"><center><b>Empresa</b></center></th>
-                          <th scope="col"><center><b>Vacantes</b></center></th>
-                          <th scope="col"><center><b>Cargo</b></center></th>
-                          <th scope="col" colspan="2"><center><b>Tipo</b></center></th>
-                          <th scope="col"><center><b>Salario</b></center></th>
-                          <th scope="col" colspan="2"><center><b>Ubicacion</b></center></th>
-                          <th scope="col"><center><b>Requisitos</b></center></th>
-                          <th scope="col"><center><b>Labores</b></center></th>
-                          <th scope="col" colspan="1"><center><b>Acciones</b></center></th>
-                      </tr>
+                            <th scope="col">
+                                <center><b>Empresa</b></center>
+                            </th>
+                            <th scope="col">
+                                <center><b>Vacantes</b></center>
+                            </th>
+                            <th scope="col">
+                                <center><b>Cargo</b></center>
+                            </th>
+                            <th scope="col" colspan="2">
+                                <center><b>Tipo</b></center>
+                            </th>
+                            <th scope="col">
+                                <center><b>Salario</b></center>
+                            </th>
+                            <th scope="col" colspan="2">
+                                <center><b>Ubicacion</b></center>
+                            </th>
+                            <th scope="col">
+                                <center><b>Requisitos</b></center>
+                            </th>
+                            <th scope="col">
+                                <center><b>Labores</b></center>
+                            </th>
+                            <th scope="col" colspan="1">
+                                <center><b>Acciones</b></center>
+                            </th>
+                        </tr>
                     </thead>
-                    <tbody id = "contenedor">
+                    <tbody id="contenedor">
                     </tbody>
                 </table>
-              </div>
             </div>
         </div>
-       
+    </div>
+
     <!--BOOTSTRAP CDN js file-->
     <!-- Latest compiled and minified JavaScript -->
     <script src="js/user.js"></script>
