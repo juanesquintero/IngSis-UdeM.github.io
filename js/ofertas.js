@@ -4,7 +4,6 @@ var app = new function(){
     getEmpresas = function() {
         var data =''
         for(var i = 0; i < empresas.length ;i++){
-            //Datos
             data += "<option value='"+empresas[i]+"'>"+empresas[i]+"</option>"
         }
         document.getElementById('empresa').innerHTML = data     
