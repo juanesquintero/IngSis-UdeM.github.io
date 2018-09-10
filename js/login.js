@@ -75,6 +75,7 @@ var app = new function() {
             document.getElementById('lblMember').innerText = nombreUsuario
             document.getElementById('lblMember').style.display = "inline"
             document.getElementById('iconUser').style.display = "inline"
+            window.location = "index.html?name=" + nombreUsuario
         } else {
             //mostrar alerta
             document.getElementById('msgAlerta').style.display = "inline"

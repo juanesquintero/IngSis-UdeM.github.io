@@ -1,7 +1,7 @@
 //se recibe las variables pasadas por parametros en la url
 var paramstr = window.location.search.substr(1);
 var params = {};
-loginUserName=""
+loginUserName = ""
 
 //se recorta el string pasado por la url despues del "?" donde encuentre un = y se guarda en un array temporal
 var tmparr = paramstr.split("=");
@@ -15,10 +15,10 @@ params[tmparr[0]] = tmparr[1];
 if (params['name']) {
     console.log('El valor del parámetro variable es: ' + params['name']);
     var tmpUserName = params['name']
-    loginUserName=tmpUserName
-    /*si es un nombre compuesto corta el %20 que pone la url como un espacio en blanco. si no es nombre compuesto entonces 
-     * guarda la var tal como la recibe y la imprime
-     */
+    loginUserName = tmpUserName
+        /*si es un nombre compuesto corta el %20 que pone la url como un espacio en blanco. si no es nombre compuesto entonces 
+         * guarda la var tal como la recibe y la imprime
+         */
     if (tmpUserName.includes('%20')) {
         loginUserName = tmpUserName.replace('%20', ' ')
     }
@@ -27,17 +27,22 @@ if (params['name']) {
     document.getElementById('lblMember').style.display = "inline"
     document.getElementById('iconUser').style.display = "inline"
     document.getElementById('btnLogin').style.display = "none"
+    document.getElementById('iconLogOut').style.display = "inline"
     console.log('El nombre del usuario logueado es: ' + loginUserName)
 } else {
     console.log('No se envió el parámetro variable');
 }
 
+logOut = function() {
+    window.location = "Login.html?name="
+}
+
 //Funcion de cambio de vista para mandar el nombre de usuario logeado
-changePage = function(vista){
-    if(loginUserName != ""){
-         //proceso para pasar el nombre por la url a las otras vistas del la pagina      
+changePage = function(vista) {
+    if (loginUserName != "") {
+        //proceso para pasar el nombre por la url a las otras vistas del la pagina      
         window.location = vista + ".html?name=" + loginUserName
-    }else{
+    } else {
         //pasar a otra vista sin usuario logeado
         window.location = vista + ".html"
         console.log('No usuario')

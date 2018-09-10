@@ -43,9 +43,10 @@
         <ul class="navbar-nav">
             <li id="btnLogin" class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
         </ul>
-
         <span id="iconUser" class="fa fa-user textBar" aria-hidden="true" style="display: none;"></span>
         <li id="lblMember" style="display:none;" class="nav-item textBar">User</li>
+        <span id="iconLogOut" class="fa fa-sign-out textBar" aria-hidden="true" style="display: none;" onclick="logOut()"></span>
+
 
         <a class="navbar-brand vbl" style="margin-left: 2%;" href="https://www.udem.edu.co/" target="_blank">
             <img src="Imagenes\udem.png" width="215" height="80" style="margin-left: 5%" class="d-inline-block align-baseline" alt="">
@@ -79,10 +80,6 @@
     <!--El mensaje de error que muestra al hacer un login incorrecto (Escondido hasta que se valide la info de login)-->
     <div class="contenedor1" style="margin-left: 40%;">
         <div id="msgAlerta" class="alert alert-danger" role="alert" style="display: none">
-            <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> ¡Email o contraseña incorrectos!
-        </div>
-        <div id="alert" class="alert alert-warning" role="alert" style="display: none;">
             <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
             <span class="sr-only">Error:</span> ¡Email o contraseña incorrectos!
         </div>
