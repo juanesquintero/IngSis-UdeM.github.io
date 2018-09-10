@@ -199,8 +199,8 @@ var app = new function(){
             data += '<td>'+empresas[i].tel+'</td>'
             data += '<td>'+empresas[i].email+'</td>'
             //Acciones     
-            data += '<td><button onclick="app.edit('+i+')">Editar</button></td>'
-            data += '<td><button onclick="app.delete('+i+')">Eliminar</button></td>'
+            data += '<td><center><button type="button" class="btn btn-light" onclick="app.edit('+i+')">Editar</button>'
+            data += '<button type="button" class="btn btn-secondary" onclick="app.delete('+i+')">Eliminar</center></button></center></td>'
             data += '</tr>'
         }
         document.getElementById('contenedor').innerHTML = data     

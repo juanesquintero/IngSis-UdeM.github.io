@@ -152,44 +152,62 @@ var app = new function(){
     }
 
     checkCampos = function(){
-        if(document.getElementById('txtNombre').value == "" ||
-        document.getElementById('txtActividad').value == "" ||
-        document.getElementById('txtAlias').value == "" ||
-        document.getElementById('pais').value == "" ||
-        document.getElementById('departamento').value == "" ||
-        document.getElementById('txtEstado').value == "" ||
-        document.getElementById('txtCiudad').value == "" ||
-        document.getElementById('txtDic').value == "" ||
-        document.getElementById('txtWebsite').value == "" ||
-        document.getElementById('txtContacto').value == "" ||
-        document.getElementById('txtCargo').value == "" ||
-        document.getElementById('txtTelefono').value == "" ||
-        document.getElementById('txtEmail').value == ""){return false}
+        if( document.getElementById('empresa').value=="" ||
+        document.getElementById('txtCargo').value=="" ||
+        document.getElementById('txtVacantes').value=="" ||
+        document.getElementById('txtSalario').value=="" ||      
+        document.getElementById('txtDuracion').value=="" ||
+        document.getElementById('tiempo').value=="" ||
+        document.getElementById('txtHorario').value=="" ||
+        document.getElementById('txtLabores').value=="" ||
+        document.getElementById('txtRequisitos').value=="" ||
+        document.getElementById('pais').value=="" ||
+        document.getElementById('departamento').value =="" ||
+        document.getElementById('txtEstado').value =="" ||
+        document.getElementById('txtCiudad').value =="" ||        
+        document.getElementById('txtTelefono').value =="" ||
+        document.getElementById('txtEmail').value == ""){return false 
+            console.log('JA JA')}
         else{ return true }
     }
 
     limpiar = function(){
-        document.getElementById('txtNombre').value = ""
-        document.getElementById('txtActividad').value = ""
-        document.getElementById('txtAlias').value = ""
-        document.getElementById('pais').value = ""
-        document.getElementById('departamento').value = ""
-        document.getElementById('txtEstado').value = ""
-        document.getElementById('txtCiudad').value = ""
-        document.getElementById('txtDic').value = ""
-        document.getElementById('txtWebsite').value = ""
-        document.getElementById('txtContacto').value = ""
-        document.getElementById('txtCargo').value = ""
+        document.getElementById('empresa').value=""
+        document.getElementById('txtCargo').value=""
+        document.getElementById('txtVacantes').value=""
+        document.getElementById('rbFijo').checked = false
+        document.getElementById('rbServicio').checked = false
+        document.getElementById('txtSalario').value=""           
+        document.getElementById('txtDuracion').value=""
+        document.getElementById('tiempo').value=""
+        document.getElementById('txtHorario').value=""
+        document.getElementById('txtLabores').value=""
+        document.getElementById('txtRequisitos').value=""
+        document.getElementById('pais').value=""
+        document.getElementById('departamento').value =""
+        document.getElementById('txtEstado').value =""
+        document.getElementById('txtCiudad').value =""        
         document.getElementById('txtTelefono').value =""
-        document.getElementById('txtEmail').value = ""
+        document.getElementById('txtEmail').value =""
     } 
 
 
     add = function(){
         if(checkCampos()==true){
-            var name = document.getElementById('txtNombre').value
-            var activity = document.getElementById('txtActividad').value
-            var alias = document.getElementById('txtAlias').value
+            var company = document.getElementById('empresa').value
+            var charge = document.getElementById('txtCargo').value
+            var vacancy = document.getElementById('txtVacantes').value
+            var terminus
+            if(document.getElementById('rbFijo').checked){
+                terminus = document.getElementById('rbFijo').value
+            }else{
+                terminus = document.getElementById('rbServicio').value 
+            } 
+            var salary = document.getElementById('txtSalario').value           
+            var duration = document.getElementById('txtDuracion').value +" "+ document.getElementById('tiempo').value
+            var schedule = document.getElementById('txtHorario').value
+            var labors = document.getElementById('txtLabores').value.split(",")
+            var  requirements = document.getElementById('txtRequisitos').value.split(",")
             var country = document.getElementById('pais').value
             var state
             if(country == "CO"){
@@ -197,17 +215,13 @@ var app = new function(){
             }else{
                 state = document.getElementById('txtEstado').value
             }       
-            var city = document.getElementById('txtCiudad').value
-            var adress = document.getElementById('txtDic').value
-            var page = document.getElementById('txtWebsite').value
-            var contact = document.getElementById('txtContacto').value
-            var charge = document.getElementById('txtCargo').value
-            var phone = document.getElementById('txtTelefono').value
-            var correo = document.getElementById('txtEmail').value
-            var company = { nombre: name, actividad: activity, alias: alias, pais: country, estado: state,
-                            ciudad: city, dic: adress, web: page, contacto: contact,cargo: charge ,tel: phone ,email:correo }
-            console.log('Saves: '+company) 
-            ofertas.push(company)
+            var city = document.getElementById('txtCiudad').value            
+            var contact = document.getElementById('txtTelefono').value +" - "+document.getElementById('txtEmail').value
+            var offer = { empresa: company, cargo: charge, vacantes: vacancy, labores: labors, salario: salary,
+                            termino: terminus, duracion: duration, horario: schedule, pais: country, estado: state,
+                            ciudad: city, requisitos: requirements, contacto: contact}
+            console.log('Saves: '+offer) 
+            ofertas.push(offer)
         }else{
             //mostrar alerta
             console.log('Fail')
@@ -218,21 +232,9 @@ var app = new function(){
     }
 
     getAll = function() {
-        //console.log(students) 
         var data =''
         for(var i = 0; i < ofertas.length ;i++){
             //Datos
-            /**
-             * <th scope="col"><center><b>Empresa</b></center></th>
-                <th scope="col"><center><b>Vacantes</b></center></th>
-                <th scope="col"><center><b>Cargo</b></center></th>
-                <th scope="col" colspan="2"><center><b>Tipo</b></center></th>
-                <th scope="col"><center><b>Salario</b></center></th>
-                <th scope="col" colspan="2"><center><b>Ubicacion</b></center></th>
-                <th scope="col"><center><b>Requisitos</b></center></th>
-                <th scope="col"><center><b>Labores</b></center></th>
-                <th scope="col" colspan="2"><center><b>Acciones</b></center></th>
-             */
             data += '<tr>'
             data += '<td>'+ofertas[i].empresa+'</td>'
             data += '<td>'+ofertas[i].vacantes+'</td>'
@@ -254,8 +256,8 @@ var app = new function(){
             data += '<td>'+labores+'</td>'
             //data += '<td>'+ofertas[i].contacto+'</td>'           
             //Acciones     
-            data += '<td><button onclick="app.edit('+i+')">Editar</button></td>'
-            data += '<td><button onclick="app.delete('+i+')">Eliminar</button></td>'
+            data += '<td><center><button type="button" class="btn btn-light" onclick="app.edit('+i+')">Editar</button>'
+            data += '<button type="button" class="btn btn-secondary" onclick="app.delete('+i+')">Eliminar</center></button></center></td>'
             data += '</tr>'
         }
         document.getElementById('contenedor').innerHTML = data     
@@ -271,7 +273,17 @@ sugerir = function(){
         document.getElementById('divEstado').style.display = "none" 
         var ciudad = document.getElementById('departamento').value
         document.getElementById('txtCiudad').value = ciudad  
-    }      
+    }    
+    if(document.getElementById('rbServicio').checked){
+        console.log('Sugiriendo')
+        document.getElementById('txtHorario').value = "No tiene"
+        document.getElementById('txtHorario').style.display = "none"
+        document.getElementById('txtHorario2').style.display = "inline" 
+    }else{
+        document.getElementById('txtHorario').value = ""
+        document.getElementById('txtHorario').style.display = "inline"
+        document.getElementById('txtHorario2').style.display = "none" 
+    }
 }
 
 

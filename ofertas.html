@@ -60,7 +60,7 @@
               <div class="col-sm">
                 <form >
                   <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                       <label>Empresa</label>
                       <select id="empresa" class="form-control" onchange="sugerir()">
                         <option id='PSL' value='PSL S.A'>PSL</option>
@@ -80,11 +80,11 @@
                     <div class="form-group col-md-3" style="margin-left: 20px">
                         <p>Termino</p>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="rbServicio" value="Por servicio" name="nombre">
+                            <input type="radio" class="custom-control-input" id="rbServicio" value="Por servicio" name="nombre" onclick="sugerir()">
                             <label class="custom-control-label" for="rbServicio">por servicio</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="rbFijo" value="fijo" name="nombre">
+                            <input type="radio" class="custom-control-input" id="rbFijo" value="fijo" name="nombre" onclick="sugerir()">
                             <label class="custom-control-label" for="rbFijo">fijo</label>
                         </div>
                     </div>
@@ -94,21 +94,32 @@
                     </div>  
                     <div class="form-group col-md-2">
                         <label>Duracion</label>
-                        <input type="text" class="form-control" id="txtDuracion" placeholder="Tiempo contrato">
+                        <input type="number" class="form-control" id="txtDuracion" placeholder="Tiempo contrato">
+                    </div>  
+                    <div class="form-group col-md-2">
+                        <br>
+                        <select id="tiempo" class="form-control" style="margin-top: 8px">
+                            <option value='años'>años</option>
+                            <option value='meses'>meses</option>
+                            <option value='semanas'>semanas</option>
+                            <option value='dias'>dias</option>
+                            <option value='horas'>horas</option>
+                        </select>
                     </div>  
                     <div class="form-group col-md-4">
                         <label>Horario</label>
                         <input type="text" class="form-control" id="txtHorario" placeholder="Horario semanal">
+                        <input type="text" readonly class="form-control-plaintext" id="txtHorario2" value="No tiene" style="display: none; color: darkgrey">
                     </div> 
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-10">
                         <label>Labores</label>
                         <input type="text" class="form-control" id="txtLabores" placeholder="Labores que debera realizar en el cargo">
                     </div> 
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-10">
                         <label>Requisitos</label>
                         <input type="text" class="form-control" id="txtRequisitos" placeholder="Requisitos que bebe cumplir el aspirante">
                     </div> 
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                       <label>Pais</label>
                       <select id="pais" class="form-control" onchange="sugerir()">                  
                         <option value="AF">Afghanistan</option>
@@ -362,7 +373,7 @@
                         <option value="ZW">Zimbabwe</option>
                       </select>                    
                   </div>
-                    <div id="divDepar" class="form-group col-md-4" style="display: none;" >
+                    <div id="divDepar" class="form-group col-md-3" style="display: none;" >
                       <label>Departamento</label>
                       <select id="departamento" class="form-control" onchange="sugerir()">
                         <option id='CO-AMA' value='Leticia'>Amazonas</option>
@@ -400,11 +411,11 @@
                         <option id='CO-VID' value='Puerto Carreño'>Vichada</option>                            
                       </select>                    
                       </div>
-                    <div class="form-group col-md-4" id="divEstado">
+                    <div class="form-group col-md-3" id="divEstado">
                       <label id="lblEstado">Estado</label>
                       <input type="text" class="form-control" id="txtEstado" placeholder="California">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                       <label>Ciudad</label>
                       <input type="text" class="form-control" id="txtCiudad" placeholder="Los Angeles">
                     </div>
@@ -434,7 +445,7 @@
                   <div id="msgAlerta" class="alert alert-warning contenedor1" role="alert" style="display: none; margin-bottom: 20px;">
                     <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
-                    ¡Email o contraseña incorrectos!
+                    ¡Informacion incompleta o incorrecta!
                   </div>
                   <div class="hb"></div>
               </form>
@@ -456,7 +467,7 @@
                           <th scope="col" colspan="2"><center><b>Ubicacion</b></center></th>
                           <th scope="col"><center><b>Requisitos</b></center></th>
                           <th scope="col"><center><b>Labores</b></center></th>
-                          <th scope="col" colspan="2"><center><b>Acciones</b></center></th>
+                          <th scope="col" colspan="1"><center><b>Acciones</b></center></th>
                       </tr>
                     </thead>
                     <tbody id = "contenedor">
