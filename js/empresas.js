@@ -192,7 +192,7 @@ var app = new function(){
             data += '<tr>'
             data += '<td>'+empresas[i].nombre+'</td>'
             data += '<td>'+empresas[i].actividad+'</td>'
-            data += '<td>'+empresas[i].web+'</td>'
+            data += '<td><a href="'+empresas[i].web+'" target="_blank">'+empresas[i].web+'</td>'
             data += '<td>'+empresas[i].estado+'</td>'
             data += '<td>'+empresas[i].ciudad+'</td>'
             data += '<td>'+empresas[i].contacto+'</td>'
