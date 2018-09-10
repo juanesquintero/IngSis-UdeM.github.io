@@ -58,32 +58,33 @@
               <!--Form Ofertas-->
               <div class="col-sm">
                 <form >
-                  <div class="form-row">
-                    <div class="form-group col-md-2">
-                      <label>Empresa</label>
-                      <select id="empresa" class="form-control" onchange="sugerir()">
-                        <option value='PSL'>PSL</option>
-                        <option value='LILI'>LILI</option>
-                        <option value='GLBT'>GLBT</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Cargo</label>
-                      <input type="text" class="form-control" id="txtCargo" placeholder="Cargo a emplear">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label>Vacantes</label>
-                        <input type="number" class="form-control" id="txtVacantes">
-                    </div>
+                    <input type="hidden" id='offerId'/>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                        <label>Empresa</label>
+                        <select id="empresa" class="form-control">
+                            <option value='PSL'>PSL</option>
+                            <option value='LILI'>LILI</option>
+                            <option value='GLBT'>GLBT</option>
+                        </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label>Cargo</label>
+                        <input type="text" class="form-control" id="txtCargo" placeholder="Cargo a emplear">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Vacantes</label>
+                            <input type="number" class="form-control" id="txtVacantes">
+                        </div>
                     <!--Radio buttons para termino del contrato-->
                     <div class="form-group col-md-3" style="margin-left: 20px">
                         <p>Termino</p>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="rbServicio" value="Por servicio" name="nombre" onclick="sugerir()">
+                            <input type="radio" class="custom-control-input" id="rbServicio" value="Por servicio" name="nombre" onclick="sugerirHorario()">
                             <label class="custom-control-label" for="rbServicio">por servicio</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="rbFijo" value="fijo" name="nombre" onclick="sugerir()">
+                            <input type="radio" class="custom-control-input" id="rbFijo" value="fijo" name="nombre" onclick="sugerirHorario()">
                             <label class="custom-control-label" for="rbFijo">fijo</label>
                         </div>
                     </div>
@@ -119,7 +120,7 @@
                     </div> 
                     <div class="form-group col-md-3">
                       <label>Pais</label>
-                      <select id="pais" class="form-control" onchange="sugerir()">                  
+                      <select id="pais" class="form-control" onchange="sugerirEstado()">                  
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
                         <option value="AL">Albania</option>
@@ -373,7 +374,7 @@
                   </div>
                     <div id="divDepar" class="form-group col-md-3" style="display: none;" >
                         <label>Departamento</label>
-                        <select id="departamento" class="form-control" onchange="sugerir()">
+                        <select id="departamento" class="form-control" onchange="sugerirEstado()">
                             <option id='CO-AMA' value='Leticia'>Amazonas</option>
                             <option id='CO-ANT' value='Medellín'>Antioquia</option>
                             <option id='CO-ARA' value='Arauca'>Arauca</option>

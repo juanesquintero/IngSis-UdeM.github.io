@@ -8,13 +8,13 @@ var app = new function(){
             "Preparar impuestos", "Digitar compras",],
             salario:781.242,           
             termino:"Fijo",
-            duracion:"1 año",
+            duracion:"1 años",
             horario:"Lunes-Viernes 8-12 2-6",
             pais:"CO",
             estado:"CO-VAC",
             ciudad:"Cali",
             requisitos: ["Minimo 5to semestre de pregrado","Manejo de sistema CG1"],
-            contacto:"sebasramirez@lilibisuteria.com - 8801960 ", 
+            contacto:"8801960 - sebasramirez@lilibisuteria.com ", 
         },
         {
             empresa:"GLBT",
@@ -22,14 +22,14 @@ var app = new function(){
             vacantes:5,
             labores:["Dllo Front-end","Dllo Back-end","Diseñar de vistas",],
             salario: 2300.001,           
-            termino:"Por Servicio",
+            termino:"Por servicio",
             duracion:"6 meses",
             horario:"No tiene",
             pais:"AR",
             estado:"AR-BUE",
             ciudad:"Buenos Aires",
             requisitos: ["Javascript","Php","Css","Angular"],
-            contacto:"juan.florez@globant.com - 4891340",            
+            contacto:"4891340 - juan.florez@globant.com",            
         },
         {   
             empresa:"PSL",
@@ -44,7 +44,7 @@ var app = new function(){
             estado:"CO-ANT",
             ciudad:"Medellín",
             requisitos: ["Doctorado Informatico","Tablue","Hadoop map","stadistic R"],
-            contacto:"danitag@psl.com - 3722022",  
+            contacto:"3722022 - danitag@psl.com",  
         },
         {   
             empresa:"GLBT",
@@ -59,47 +59,52 @@ var app = new function(){
             estado:"CO-ANT",
             ciudad:"Medellín",
             requisitos: ["Doctorado Informatico","Tablue","Hadoop map","stadistic R"],
-            contacto:"juan.florez@globant.com - 4891340",
+            contacto:"4891340 - juan.florez@globant.com",
         },
-        {   
+        {  
             empresa:"PSL",
             cargo:"Scrum Master",
             vacantes:2,
             labores:["",""],
             salario:3000.001,           
             termino:"Fijo",
-            duracion:"1 año",
+            duracion:"1 años",
             horario:"Lunes-Viernes 8-12 2-6",
             pais:"CO",
             estado:"CO-ANT",
             ciudad:"Medellín",
             requisitos: ["","Habilidad de trabajo grupal"],
-            contacto:"danitag@psl.com - 3722022",    
+            contacto:"3722022 - danitag@psl.com",
         }
     ]
 
     this.edit = function(position){
-        document.getElementById('txtNombre').value = ofertas[position].nombre
-        document.getElementById('txtActividad').value = ofertas[position].actividad
-        document.getElementById('txtAlias').value = ofertas[position].alias
-        document.getElementById('pais').value = ofertas[position].pais
-        if(ofertas[position].pais == "CO"){
-            document.getElementById('divDepar').style.display = "inline"
-            document.getElementById('divEstado').style.display = "none"
-            document.getElementById(ofertas[position].estado).selected=true             
-        }else{            
-            document.getElementById('divDepar').style.display = "none"
-            document.getElementById('divEstado').style.display = "inline"
-            document.getElementById('txtEstado').value = ofertas[position].estado
-        }
-        document.getElementById('txtCiudad').value = ofertas[position].ciudad
-        document.getElementById('txtDic').value = ofertas[position].dic
-        document.getElementById('txtWebsite').value = ofertas[position].web
-        document.getElementById('txtContacto').value = ofertas[position].contacto
+        document.getElementById('offerId').value = position
+        document.getElementById('empresa').value = ofertas[position].empresa
         document.getElementById('txtCargo').value = ofertas[position].cargo
-        document.getElementById('txtTelefono').value = ofertas[position].tel
-        document.getElementById('txtEmail').value = ofertas[position].email
-
+        document.getElementById('txtVacantes').value = ofertas[position].vacantes
+        document.getElementById('txtSalario').value= ofertas[position].salario   
+        document.getElementById('txtEstado').value= ofertas[position].estado
+        document.getElementById('pais').value = ofertas[position].pais        
+        var duration = ofertas[position].duracion.split(" ")
+        document.getElementById('txtDuracion').value= duration[0]
+        document.getElementById('tiempo').value=  duration[1]
+        document.getElementById('txtHorario').value= ofertas[position].horario
+        document.getElementById('txtLabores').value= ofertas[position].labores.join(', ')
+        document.getElementById('txtRequisitos').value= ofertas[position].requisitos.join(', ')
+        document.getElementById('txtCiudad').value = ofertas[position].ciudad    
+        var contact = ofertas[position].contacto.split(" - ")
+        document.getElementById('txtTelefono').value = contact[0]
+        document.getElementById('txtEmail').value = contact[1]
+        if(ofertas[position].termino == "Por servicio"){
+            document.getElementById('txtHorario').disabled = true
+            document.getElementById('rbServicio').checked = true
+            document.getElementById('rbFijo').checked = false            
+        }else{            
+            document.getElementById('rbServicio').checked = false
+            document.getElementById('rbFijo').checked = true
+            document.getElementById('txtHorario').disabled = false
+        }
         document.getElementById('btnNew').style.display = "none"
         document.getElementById('btnUpdate').style.display = "inline"
         document.getElementById('btnCancel').style.display = "inline"
@@ -107,9 +112,21 @@ var app = new function(){
 
     update = function(){
         if( checkCampos() == true){
-            var name = document.getElementById('txtNombre').value
-            var activity = document.getElementById('txtActividad').value
-            var id = document.getElementById('txtAlias').value
+            var id = document.getElementById('offerId').value
+            var company = document.getElementById('empresa').value
+            var charge = document.getElementById('txtCargo').value
+            var vacancy = document.getElementById('txtVacantes').value
+            var terminus
+            var schedule = document.getElementById('txtHorario').value
+            if(document.getElementById('rbFijo').checked){
+                terminus = document.getElementById('rbFijo').value
+            }else{
+                terminus = document.getElementById('rbServicio').value
+            } 
+            var salary = document.getElementById('txtSalario').value           
+            var duration = document.getElementById('txtDuracion').value +" "+ document.getElementById('tiempo').value
+            var labors = document.getElementById('txtLabores').value.split(", ")
+            var  requirements = document.getElementById('txtRequisitos').value.split(", ")
             var country = document.getElementById('pais').value
             var state
             if(country == "CO"){
@@ -117,17 +134,13 @@ var app = new function(){
             }else{
                 state = document.getElementById('txtEstado').value
             }       
-            var city = document.getElementById('txtCiudad').value
-            var adress = document.getElementById('txtDic').value
-            var page = document.getElementById('txtWebsite').value
-            var contact = document.getElementById('txtContacto').value
-            var charge = document.getElementById('txtCargo').value
-            var phone = document.getElementById('txtTelefono').value
-            var correo = document.getElementById('txtEmail').value
-            var company = { nombre: name, actividad: activity, alias: id, pais: country, estado: state,
-                            ciudad: city, dic: adress, web: page, contacto: contact,cargo: charge ,tel: phone ,email:correo }
-            console.log('Saves: '+company) 
-            ofertas.splice({alias:""+id+""},1,company)
+            var city = document.getElementById('txtCiudad').value            
+            var contact = document.getElementById('txtTelefono').value +" - "+document.getElementById('txtEmail').value
+            var offer = { empresa: company, cargo: charge, vacantes: vacancy, labores: labors, salario: salary,
+                            termino: terminus, duracion: duration, horario: schedule, pais: country, estado: state,
+                            ciudad: city, requisitos: requirements, contacto: contact}
+            console.log('Saves: '+offer) 
+            ofertas.splice(id,1,offer)
         }else{
             //mostrar alerta
             console.log('Fail')
@@ -146,7 +159,7 @@ var app = new function(){
     }
 
     this.delete = function(position){
-        console.log('delete '+ofertas[position].nombre)
+        console.log('delete '+ofertas[position].id)
         ofertas.splice(position,1)
         getAll()
     }
@@ -157,11 +170,13 @@ var app = new function(){
         document.getElementById('txtVacantes').value=="" ||
         document.getElementById('txtSalario').value=="" ||      
         document.getElementById('txtDuracion').value=="" ||
+        (document.getElementById('txtEstado').display == "inline" 
+        && document.getElementById('txtEstado').value == "")||
+        document.getElementById('pais').value == "" ||
         document.getElementById('tiempo').value=="" ||
         document.getElementById('txtHorario').value=="" ||
         document.getElementById('txtLabores').value=="" ||
         document.getElementById('txtRequisitos').value=="" ||
-        document.getElementById('txtEstado').value =="" ||
         document.getElementById('txtCiudad').value =="" ||        
         document.getElementById('txtTelefono').value =="" ||
         document.getElementById('txtEmail').value == "" ) {return false} 
@@ -178,10 +193,11 @@ var app = new function(){
         document.getElementById('txtDuracion').value=""
         document.getElementById('tiempo').value=""
         document.getElementById('txtHorario').value=""
+        document.getElementById('txtHorario').disabled = false
         document.getElementById('txtLabores').value=""
         document.getElementById('txtRequisitos').value=""
         document.getElementById('pais').value="AF"
-        document.getElementById('departamento').id =="CO-AMA"
+        document.getElementById('departamento').value = "Leticia"
         document.getElementById('txtEstado').value =""
         document.getElementById('txtCiudad').value =""        
         document.getElementById('txtTelefono').value =""
@@ -190,6 +206,7 @@ var app = new function(){
 
     add = function(){
         if(checkCampos()==true){
+            var id = document.getElementById('offerId').value
             var company = document.getElementById('empresa').value
             var charge = document.getElementById('txtCargo').value
             var vacancy = document.getElementById('txtVacantes').value
@@ -202,8 +219,8 @@ var app = new function(){
             } 
             var salary = document.getElementById('txtSalario').value           
             var duration = document.getElementById('txtDuracion').value +" "+ document.getElementById('tiempo').value
-            var labors = document.getElementById('txtLabores').value.split(",")
-            var  requirements = document.getElementById('txtRequisitos').value.split(",")
+            var labors = document.getElementById('txtLabores').value.split(", ")
+            var  requirements = document.getElementById('txtRequisitos').value.split(", ")
             var country = document.getElementById('pais').value
             var state
             if(country == "CO"){
@@ -261,21 +278,7 @@ var app = new function(){
     getAll()
 }
 
-sugerir = function(){
-    console.log('Sugiriendo')   
-    //El pais condiciona el estado o departamento
-    var pais = document.getElementById('pais').value
-    if(pais == "CO"){
-        document.getElementById('divDepar').style.display = "inline"
-        document.getElementById('divEstado').style.display = "none" 
-        var ciudad = document.getElementById('departamento').value
-        document.getElementById('txtCiudad').value = ciudad  
-    }else{
-        document.getElementById('divDepar').style.display = "none"
-        document.getElementById('divEstado').style.display = "inline" 
-        document.getElementById('departamento').id = "CO-AMA"
-        document.getElementById('txtCiudad').value = ""  
-    }
+sugerirHorario = function(){
     //El termino del contrato condiciona al horario
     if(document.getElementById('rbServicio').checked){
         if(document.getElementById('txtHorario').value == "" ){
@@ -292,7 +295,23 @@ sugerir = function(){
             document.getElementById('txtHorario').value = ""
         }
     }  
-    
+}
+
+sugerirEstado = function(){
+    console.log('Sugiriendo')   
+    //El pais condiciona el estado o departamento
+    var pais = document.getElementById('pais').value
+    if(pais == "CO"){
+        document.getElementById('divDepar').style.display = "inline"
+        document.getElementById('divEstado').style.display = "none" 
+        var ciudad = document.getElementById('departamento').value
+        document.getElementById('txtCiudad').value = ciudad  
+    }else{
+        document.getElementById('divDepar').style.display = "none"
+        document.getElementById('divEstado').style.display = "inline" 
+        document.getElementById('departamento').value = "Leticia"
+        document.getElementById('txtCiudad').value = ""  
+    }    
 }
 
 

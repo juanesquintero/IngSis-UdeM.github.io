@@ -122,7 +122,8 @@ var app = new function(){
         if(document.getElementById('txtNombre').value == "" ||
         document.getElementById('txtActividad').value == "" ||
         document.getElementById('txtAlias').value == "" ||
-        document.getElementById('txtEstado').value == "" ||
+        (document.getElementById('txtEstado').display == "inline" 
+        && document.getElementById('txtEstado').value == "") ||
         document.getElementById('txtCiudad').value == "" ||
         document.getElementById('txtDic').value == "" ||
         document.getElementById('txtWebsite').value == "" ||
@@ -138,7 +139,7 @@ var app = new function(){
         document.getElementById('txtActividad').value = ""
         document.getElementById('txtAlias').value = ""
         document.getElementById('pais').value="AF"
-        document.getElementById('departamento').id =="CO-AMA"
+        document.getElementById('departamento').value = "Leticia"
         document.getElementById('txtEstado').value = ""
         document.getElementById('txtCiudad').value = ""
         document.getElementById('txtDic').value = ""
@@ -219,7 +220,7 @@ sugerir = function(){
         console.log('Sugiriendo')
         document.getElementById('divDepar').style.display = "none"
         document.getElementById('divEstado').style.display = "inline" 
-        document.getElementById('departamento').id = "CO-AMA"
+        document.getElementById('departamento').value = "Leticia"
         document.getElementById('txtCiudad').value = ""  
     }    
 }
