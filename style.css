@@ -2,7 +2,6 @@ li {
     margin-right: 20px
 }
 
-
 #inicio {
     margin-left: 30px
 }
@@ -13,7 +12,13 @@ li {
     margin-left: 35%;
 }
 
-.img{
+.contenedor2 {
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.img {
     width: 20px;
     height: 10px;
 }
@@ -23,7 +28,7 @@ a:hover {
     color: #333
 }
 
-.textBar{
+.textBar {
     color: white;
     margin-right: 1%
 }
@@ -32,12 +37,14 @@ a:hover {
     border-right: 2px solid grey;
     height: 100%;
 }
+
 .vbl {
     border-left: 2px solid grey;
     height: 100%;
 }
+
 .hb {
-    height:2px;
+    height: 2px;
     background-color: grey;
     margin-bottom: 50px;
     width: 100%;
