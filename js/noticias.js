@@ -23,7 +23,7 @@ var app = new function(){
         },
         {   
             titulo:"Revelan método informático más ágil y eficaz en detección del cáncer de seno",
-            bajada:"Un método más eficiente y preciso para identificar tumoraciones cancerosas en senos"+
+            subtitulo:"Un método más eficiente y preciso para identificar tumoraciones cancerosas en senos"+
                     "que analiza imágenes de tejidos mediante un ordenador, un proceso mucho más rápido que"+
                     "el tradicional, fue presentado por la Universidad el Sur de California (USC).",
             imagen:"https://media.ultimahora.com/adjuntos/161/imagenes/007/830/0007830300.jpg",
@@ -44,7 +44,7 @@ var app = new function(){
         },
         {   
             titulo:"Chinos diseñan nanorobot para estrangular tumores",
-            bajada:"Cientifícos chinos han diseñado, a través de nanotecnología y plegando moléculas de ADN en un proceso similar a la papiroflexia, lo que denominan 'el caballo de Troya', más delgado que 1/4000 de un cabello y que libera 'asesinos' para combatir tumores cancerígenos, informó el medio oficial Xinhua.",
+            subtitulo:"Cientifícos chinos han diseñado, a través de nanotecnología y plegando moléculas de ADN en un proceso similar a la papiroflexia, lo que denominan 'el caballo de Troya', más delgado que 1/4000 de un cabello y que libera 'asesinos' para combatir tumores cancerígenos, informó el medio oficial Xinhua.",
             imagen:"https://media.ultimahora.com/adjuntos/161/imagenes/006/840/0006840423.jpg",
             descripcion:"Los investigadores han llevado a cabo experimentos controlados con el nanorobot en más de 200 ratones con melanoma.as.com",
             autor:"melamona.as.com",
@@ -55,38 +55,19 @@ var app = new function(){
             lugar:"Shangai - China",
             temas: ["ciencia","tecnologia","salud","china"]            
         }
-
-
-
     ]
 
     this.edit = function(position){
-        document.getElementById('offerId').value = position
-        document.getElementById('empresa').value = noticias[position].empresa
-        document.getElementById('txtCargo').value = noticias[position].cargo
-        document.getElementById('txtVacantes').value = noticias[position].vacantes
-        document.getElementById('txtSalario').value= noticias[position].salario   
-        document.getElementById('txtEstado').value= noticias[position].estado
-        document.getElementById('pais').value = noticias[position].pais        
-        var duration = noticias[position].duracion.split(" ")
-        document.getElementById('txtDuracion').value= duration[0]
-        document.getElementById('tiempo').value=  duration[1]
-        document.getElementById('txtHorario').value= noticias[position].horario
-        document.getElementById('txtLabores').value= noticias[position].labores.join(', ')
-        document.getElementById('txtRequisitos').value= noticias[position].requisitos.join(', ')
-        document.getElementById('txtCiudad').value = noticias[position].ciudad    
-        var contact = noticias[position].contacto.split(" - ")
-        document.getElementById('txtTelefono').value = contact[0]
-        document.getElementById('txtEmail').value = contact[1]
-        if(noticias[position].termino == "Por servicio"){
-            document.getElementById('txtHorario').disabled = true
-            document.getElementById('rbServicio').checked = true
-            document.getElementById('rbFijo').checked = false            
-        }else{            
-            document.getElementById('rbServicio').checked = false
-            document.getElementById('rbFijo').checked = true
-            document.getElementById('txtHorario').disabled = false
-        }
+        document.getElementById('noticiaId').value = position
+        document.getElementById('txtTitulo').value = noticias[position].titulo
+        document.getElementById('txtSubtitulo').value = noticias[position].subtitulo
+        document.getElementById('txtImagen').value = noticias[position].imagen
+        document.getElementById('txtDescripcion').value= noticias[position].descripcion   
+        document.getElementById('txtAutor').value= noticias[position].autor
+        document.getElementById('txtLugar').value = noticias[position].lugar        
+        document.getElementById('txtTemas').value = noticias[position].temas.join(', ')        
+        document.getElementById('datepicker').value= noticias[position].fecha
+        document.getElementById('txtContenido').value= noticias[position].contenido
         document.getElementById('btnNew').style.display = "none"
         document.getElementById('btnUpdate').style.display = "inline"
         document.getElementById('btnCancel').style.display = "inline"
@@ -94,35 +75,20 @@ var app = new function(){
 
     update = function(){
         if( checkCampos() == true){
-            var id = document.getElementById('offerId').value
-            var company = document.getElementById('empresa').value
-            var charge = document.getElementById('txtCargo').value
-            var vacancy = document.getElementById('txtVacantes').value
-            var terminus
-            var schedule = document.getElementById('txtHorario').value
-            if(document.getElementById('rbFijo').checked){
-                terminus = document.getElementById('rbFijo').value
-            }else{
-                terminus = document.getElementById('rbServicio').value
-            } 
-            var salary = document.getElementById('txtSalario').value           
-            var duration = document.getElementById('txtDuracion').value +" "+ document.getElementById('tiempo').value
-            var labors = document.getElementById('txtLabores').value.split(", ")
-            var  requirements = document.getElementById('txtRequisitos').value.split(", ")
-            var country = document.getElementById('pais').value
-            var state
-            if(country == "CO"){
-                state = document.getElementById('departamento').id
-            }else{
-                state = document.getElementById('txtEstado').value
-            }       
-            var city = document.getElementById('txtCiudad').value            
-            var contact = document.getElementById('txtTelefono').value +" - "+document.getElementById('txtEmail').value
-            var offer = { empresa: company, cargo: charge, vacantes: vacancy, labores: labors, salario: salary,
-                            termino: terminus, duracion: duration, horario: schedule, pais: country, estado: state,
-                            ciudad: city, requisitos: requirements, contacto: contact}
-            console.log('Saves: '+offer) 
-            noticias.splice(id,1,offer)
+            var id = document.getElementById('noticiaId').value
+            var title = document.getElementById('txtTitulo').value
+            var subtitle = document.getElementById('txtSubtitulo').value
+            var image = document.getElementById('txtImagen').value
+            var description = document.getElementById('txtDescripcion').value
+            var author = document.getElementById('txtAutor').value
+            var place = document.getElementById('txtLugar').value
+            var topics = document.getElementById('txtTemas').value.split(', ')
+            var date = document.getElementById('datepicker').value
+            var body = document.getElementById('txtContenido').value     
+            var noticia = { titulo: title, subtitulo: subtitle, imagen: image, descripcion: description,
+                            autor: author, lugar: place, temas: topics, fecha: date, contenido: body}
+            console.log('Saves: '+noticia) 
+            noticias.splice(id,1,noticia)
         }else{
             //mostrar alerta
             console.log('Fail')
@@ -147,76 +113,47 @@ var app = new function(){
     }
 
     checkCampos = function(){
-        if( document.getElementById('empresa').value=="" ||
-        document.getElementById('txtCargo').value=="" ||
-        document.getElementById('txtVacantes').value=="" ||
-        document.getElementById('txtSalario').value=="" ||      
-        document.getElementById('txtDuracion').value=="" ||
-        (document.getElementById('txtEstado').display == "inline" 
-        && document.getElementById('txtEstado').value == "")||
-        document.getElementById('pais').value == "" ||
-        document.getElementById('tiempo').value=="" ||
-        document.getElementById('txtHorario').value=="" ||
-        document.getElementById('txtLabores').value=="" ||
-        document.getElementById('txtRequisitos').value=="" ||
-        document.getElementById('txtCiudad').value =="" ||        
-        document.getElementById('txtTelefono').value =="" ||
-        document.getElementById('txtEmail').value == "" ) {return false} 
+        if( 
+        document.getElementById('txtTitulo').value == "" ||
+        document.getElementById('txtSubtitulo').value ==""||
+        document.getElementById('txtImagen').value == ""||
+        document.getElementById('txtDescripcion').value == ""||
+        document.getElementById('txtAutor').value == ""||
+        document.getElementById('txtLugar').value == ""||
+        document.getElementById('txtTemas').value == ""||
+        document.getElementById('datepicker').value == ""||
+        document.getElementById('txtContenido').value == "") {return false} 
         else{ return true }
+
     }
 
     limpiar = function(){
-        document.getElementById('empresa').value=""
-        document.getElementById('txtCargo').value=""
-        document.getElementById('txtVacantes').value=""
-        document.getElementById('rbFijo').checked = true
-        document.getElementById('rbServicio').checked = false
-        document.getElementById('txtSalario').value=""           
-        document.getElementById('txtDuracion').value=""
-        document.getElementById('tiempo').value=""
-        document.getElementById('txtHorario').value=""
-        document.getElementById('txtHorario').disabled = false
-        document.getElementById('txtLabores').value=""
-        document.getElementById('txtRequisitos').value=""
-        document.getElementById('pais').value="AF"
-        document.getElementById('departamento').value = "Leticia"
-        document.getElementById('txtEstado').value =""
-        document.getElementById('txtCiudad').value =""        
-        document.getElementById('txtTelefono').value =""
-        document.getElementById('txtEmail').value =""
+        document.getElementById('txtTitulo').value = ""
+        document.getElementById('txtSubtitulo').value =""
+        document.getElementById('txtImagen').value = ""
+        document.getElementById('txtDescripcion').value= ""
+        document.getElementById('txtAutor').value= ""
+        document.getElementById('txtLugar').value = ""
+        document.getElementById('txtTemas').value = ""
+        document.getElementById('datepicker').value= ""
+        document.getElementById('txtContenido').value= ""
     }
 
     add = function(){
         if(checkCampos()==true){
-            var id = document.getElementById('noticiaId').value
             var title = document.getElementById('txtTitulo').value
-            var charge = document.getElementById('txtCargo').value
-            var vacancy = document.getElementById('txtVacantes').value
-            var terminus
-            var schedule = document.getElementById('txtHorario').value
-            if(document.getElementById('rbFijo').checked){
-                terminus = document.getElementById('rbFijo').value
-            }else{
-                terminus = document.getElementById('rbServicio').value
-            } 
-            var salary = document.getElementById('txtSalario').value           
-            var duration = document.getElementById('txtDuracion').value +" "+ document.getElementById('tiempo').value
-            var labors = document.getElementById('txtLabores').value.split(", ")
-            var  requirements = document.getElementById('txtRequisitos').value.split(", ")
-            var country = document.getElementById('pais').value
-            var state
-            if(country == "CO"){
-                state = document.getElementById('departamento').id
-            }else{
-                state = document.getElementById('txtEstado').value
-            }       
-            var city = document.getElementById('txtCiudad').value            
-            var contact = document.getElementById('txtTelefono').value +" - "+document.getElementById('txtEmail').value
-            var offer = { empresa: company, cargo: charge, vacantes: vacancy, labores: labors, salario: salary,
-                            termino: terminus, duracion: duration, horario: schedule, pais: country, estado: state,
-                            ciudad: city, requisitos: requirements, contacto: contact}
-            console.log('Saves: '+offer) 
-            noticias.push(offer)
+            var subtitle = document.getElementById('txtSubtitulo').value
+            var image = document.getElementById('txtImagen').value
+            var description = document.getElementById('txtDescripcion').value
+            var author = document.getElementById('txtAutor').value
+            var place = document.getElementById('txtLugar').value
+            var topics = document.getElementById('txtTemas').value.split(', ')
+            var date = document.getElementById('datepicker').value
+            var body = document.getElementById('txtContenido').value     
+            var noticia = { titulo: title, subtitulo: subtitle, imagen: image, descripcion: description,
+                            autor: author, lugar: place, temas: topics, fecha: date, contenido: body}
+            console.log('Saves: '+noticia) 
+            noticias.push(noticia)
         }else{
             //mostrar alerta
             console.log('Fail')
@@ -258,6 +195,24 @@ var app = new function(){
         document.getElementById('contenedor').innerHTML = data     
     }
     getAll()
+}
+sugerir = function(){
+    console.log('Sugiriendo')
+    var today = new Date()
+    var dd = today.getDate()
+    var mm = today.getMonth()+1 //enero es 0
+    var yyyy = today.getFullYear()
+    if(dd<10) { dd = '0'+dd }
+    if(mm<10) { mm = '0'+mm }
+    today = mm+ '/' + dd  + '/' + yyyy
+    console.log(today)
+    console.log(document.getElementById('datepicker').value)
+    if(document.getElementById('datepicker').value > today ){
+        document.getElementById('datepicker').value = today
+        document.getElementById('lblFechaMayor').style.display = "inline"
+    }else{
+        document.getElementById('lblFechaMayor').style.display = "none"
+    }
 }
 $('#datepicker').datepicker({
     uiLibrary: 'bootstrap4'
