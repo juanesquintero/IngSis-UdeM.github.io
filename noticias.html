@@ -18,7 +18,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!--Datepicker-->
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -427,6 +429,7 @@
 
                     <br>
                     <!--Persona de contacto-->
+                    <input id="datepicker" width="276" />                   
                     <p><b>Enviar datos y hoja de vida</b></p>
                     <hr>
                     <div class="form-row">
@@ -455,46 +458,55 @@
 
                 <br><br>
             </div>
-
-            <!--Visualizacion-->
-            <div class="col-sm">
-                <h2>Empresas</h2>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">
-                                <center><b>Empresa</b></center>
-                            </th>
-                            <th scope="col">
-                                <center><b>Vacantes</b></center>
-                            </th>
-                            <th scope="col">
-                                <center><b>Cargo</b></center>
-                            </th>
-                            <th scope="col" colspan="2">
-                                <center><b>Tipo</b></center>
-                            </th>
-                            <th scope="col">
-                                <center><b>Salario</b></center>
-                            </th>
-                            <th scope="col" colspan="2">
-                                <center><b>Ubicacion</b></center>
-                            </th>
-                            <th scope="col">
-                                <center><b>Requisitos</b></center>
-                            </th>
-                            <th scope="col">
-                                <center><b>Labores</b></center>
-                            </th>
-                            <th scope="col" colspan="1">
-                                <center><b>Acciones</b></center>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="contenedor">
-                    </tbody>
-                </table>
-            </div>
+    </div>
+    
+    <!--Visualizacion-->
+    
+    <!--Tabla-->
+    <div class="col-sm">
+        <h2>Noticias</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"><center><b>Noticia</b></center></th>
+                    <th scope="col"><center><b>Acciones</b></center></th>
+                </tr>
+            </thead>
+                <tbody id="contenedor">
+                    <td>
+                        <div class="card mb-3" >
+                            <img height="400" class="card-img-top" src="https://media.ultimahora.com/adjuntos/161/imagenes/007/813/0007813403.jpg" alt="Card image cap">
+                            <p class="card-text"><small class="text-muted">Gustavo Cerati dejó un gran legado musical con más de una decena de discos. caras.perfil.com.</small></p>
+                            <div class="card-body">
+                                <h5 class="card-title">4 años sin Gustavo Cerati, una leyenda del rock latinoamericano</h5>
+                                
+                                <p class="card-text">El músico Gustavo Cerati, ex líder de Soda Stereo, falleció el 4
+                                                    de setiembre del 2014, a sus 55 años, luego de estar cuatro años y
+                                                    medio en coma por un accidente cerebro vascular (acv) sufrido tras
+                                                    un concierto en Venezuela.
+                                                    Estaba promocionando su último disco, denominado Fuerza Natural, que
+                                                    había lanzado en setiembre del 2009.                          
+                                                    Nacido el 11 de agosto de 1959, Cerati mostró interés en la música 
+                                                    desde pequeño, llegando incluso a ser director del coro de su escuela.
+                                                    Formó dos bandas durante su adolescencia, Savage y Vozarrón, y luego 
+                                                    integró The Morgan, junto con Zeta Bosio, el que seguiría siendo su 
+                                                    compañero de banda.</p>                                
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"> <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p></li>
+                            </ul>
+                            <div class="card-body">                              
+                            </div>
+                        </div>
+                    </td>
+                    <td style="vertical-align:middle;">
+                        <center>
+                            <button type="button" class="btn btn-secondary" onclick="app.edit('+i+')" style="margin: 10px">Editar</button>
+                            <button type="button" class="btn btn-secondary" onclick="app.delete('+i+')" style="margin: 10px">Eliminar</button>
+                        </center>                 
+                    </td>
+                </tbody>
+            </table>
         </div>
     </div>
 

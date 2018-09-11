@@ -1,80 +1,11 @@
 var app = new function(){
     var ofertas = [
         {   
-            empresa:"LILI",
-            cargo:"Auxiliar contable",
-            vacantes:2,
-            labores:["liquidar nomina","Digitar ventas diarias",
-            "Preparar impuestos", "Digitar compras",],
-            salario:781.242,           
-            termino:"Fijo",
-            duracion:"1 años",
-            horario:"Lunes-Viernes 8-12 2-6",
+            
             pais:"CO",
             estado:"CO-VAC",
             ciudad:"Cali",
-            requisitos: ["Minimo 5to semestre de pregrado","Manejo de sistema CG1"],
-            contacto:"8801960 - sebasramirez@lilibisuteria.com ", 
-        },
-        {
-            empresa:"GLBT",
-            cargo:"Desarrollador Web",
-            vacantes:5,
-            labores:["Dllo Front-end","Dllo Back-end","Diseñar de vistas",],
-            salario: 2300.001,           
-            termino:"Por servicio",
-            duracion:"6 meses",
-            horario:"No tiene",
-            pais:"AR",
-            estado:"AR-BUE",
-            ciudad:"Buenos Aires",
-            requisitos: ["Javascript","Php","Css","Angular"],
-            contacto:"4891340 - juan.florez@globant.com",            
-        },
-        {   
-            empresa:"PSL",
-            cargo:"Cientifico de Datos ",
-            vacantes:1,
-            labores:["Analitycs","Maquine Learning","Modeling dataBases"],
-            salario:4200.001,           
-            termino:"Fijo",
-            duracion:"3 años",
-            horario:"3 dias 8-12 o 2-6",
-            pais:"CO",
-            estado:"CO-ANT",
-            ciudad:"Medellín",
-            requisitos: ["Doctorado Informatico","Tablue","Hadoop map","stadistic R"],
-            contacto:"3722022 - danitag@psl.com",  
-        },
-        {   
-            empresa:"GLBT",
-            cargo:"Cientifico de Datos ",
-            vacantes:2,
-            labores:["Analitycs","Maquine Learning","Modeling dataBases"],
-            salario:5800.001,           
-            termino:"Fijo",
-            duracion:"4 años",
-            horario:"4 dias 8-12 y 2-6",
-            pais:"CO",
-            estado:"CO-ANT",
-            ciudad:"Medellín",
-            requisitos: ["Doctorado Informatico","Tablue","Hadoop map","stadistic R"],
-            contacto:"4891340 - juan.florez@globant.com",
-        },
-        {  
-            empresa:"PSL",
-            cargo:"Scrum Master",
-            vacantes:2,
-            labores:["",""],
-            salario:3000.001,           
-            termino:"Fijo",
-            duracion:"1 años",
-            horario:"Lunes-Viernes 8-12 2-6",
-            pais:"CO",
-            estado:"CO-ANT",
-            ciudad:"Medellín",
-            requisitos: ["","Habilidad de trabajo grupal"],
-            contacto:"3722022 - danitag@psl.com",
+            
         }
     ]
 
@@ -311,8 +242,11 @@ sugerirEstado = function(){
         document.getElementById('divEstado').style.display = "inline" 
         document.getElementById('departamento').value = "Leticia"
         document.getElementById('txtCiudad').value = ""  
-    }    
+    }
+ 
 }
-
+$('#datepicker').datepicker({
+    uiLibrary: 'bootstrap4'
+});
 
 

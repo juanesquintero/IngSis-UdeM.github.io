@@ -13,6 +13,11 @@ li {
     margin-left: 35%;
 }
 
+.img{
+    width: 20px;
+    height: 10px;
+}
+
 a,
 a:hover {
     color: #333
