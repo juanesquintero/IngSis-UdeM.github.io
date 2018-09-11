@@ -2,7 +2,7 @@ var app = new function() {
 
     var members = [{
             nombre: "Santiago Urrego",
-            edad: 19,
+            edad: 23,
             estudiante: false,
             profesor: true,
             correo: "sarumo@gmail.com",
