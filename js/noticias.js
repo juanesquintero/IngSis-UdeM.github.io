@@ -187,8 +187,8 @@ var app = new function(){
             data += '<td><p class="card-text text-muted">Temas:</p></td><td><p class="card-text text-muted">'
             data += noticias[i].temas.join("  |  ")+'</p></td></tr></table></center></li></ul><div class="card-body"><center>'
             //Acciones
-            data += '<button type="button" class="btn btn-secondary" onclick="app.edit('+i+')" style="margin: 10px">Editar</button>'
-            data += '<button type="button" class="btn btn-secondary" onclick="app.delete('+i+')" style="margin: 10px">Eliminar</button>'
+            data += '<button type="button" class="btn btn-secondary" onclick="app.edit('+i+')">Editar</button>'
+            data += '<button type="button" class="btn btn-secondary" onclick="app.delete('+i+')" style="margin-left: 10px">Eliminar</button>'
             data += '</center></div></div></td>'            
             data += '</tr>'
         }
