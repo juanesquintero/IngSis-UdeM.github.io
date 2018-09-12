@@ -73,7 +73,7 @@ var app = new function(){
     }
 
     update = function(){
-        if( checkCampos == true){
+        if( checkCampos() == true){
             var name = document.getElementById('txtNombre').value
             var activity = document.getElementById('txtActividad').value
             var id = document.getElementById('txtAlias').value
@@ -119,11 +119,12 @@ var app = new function(){
     }
 
     checkCampos = function(){
+        var estado = document.getElementById('txtEstado').display == "inline" && document.getElementById('txtEstado').value == ""
+
         if(document.getElementById('txtNombre').value == "" ||
         document.getElementById('txtActividad').value == "" ||
         document.getElementById('txtAlias').value == "" ||
-        (document.getElementById('txtEstado').display == "inline" 
-        && document.getElementById('txtEstado').value == "") ||
+        estado == true ||
         document.getElementById('txtCiudad').value == "" ||
         document.getElementById('txtDic').value == "" ||
         document.getElementById('txtWebsite').value == "" ||
