@@ -56,3 +56,10 @@ a:hover {
     width: 100%;
     margin: 15px;
 }
+
+.carousel-control-prev-icon-black,
+.carousel-control-next-icon-black {
+    margin: 50px;
+    background-color: rgba(0, 0, 0, 0.089);
+    border-radius: 20%;
+}
